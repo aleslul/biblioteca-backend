@@ -9,4 +9,5 @@ public interface ReservaService {
     ReservaResponseDTO registrarReserva(ReservaRequestDTO requestDTO);
     void cancelarReserva(int id);
     List<ReservaResponseDTO> obtenerPorUsuario(int idUsuario);
+    List<ReservaResponseDTO> obtenerTodas();
 }

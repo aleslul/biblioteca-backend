@@ -82,6 +82,13 @@ public class ReservaServiceImpl implements ReservaService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<ReservaResponseDTO> obtenerTodas() {
+        return reservaRepository.findAll().stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+    }
+
     private ReservaResponseDTO convertToDTO(Reserva reserva) {
         ReservaResponseDTO dto = new ReservaResponseDTO();
         dto.setId(reserva.getId());

@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,7 +19,12 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    // @Transactional es lo que soluciona el LazyInitializationException: abre su propia
+    // sesión de Hibernate para este método, sin depender de si el filtro OpenEntityManagerInView
+    // ya corrió o no. El filtro JWT (parte de la cadena de Spring Security) se ejecuta ANTES
+    // de que se abra la sesión "de la vista", así que no podíamos confiar en eso.
     @Override
+    @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String correo) throws UsernameNotFoundException {
         Usuario usuario = usuarioRepository.findByCorreo(correo)
                 .orElseThrow(() -> new UsernameNotFoundException("No existe un usuario registrado con el correo: " + correo));

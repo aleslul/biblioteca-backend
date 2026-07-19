@@ -18,6 +18,12 @@ public class ReservaController {
     @Autowired
     private ReservaService reservaService;
 
+    // RF pendiente: el frontend necesita listar todas las reservas (staff)
+    @GetMapping
+    public ResponseEntity<List<ReservaResponseDTO>> obtenerTodasLasReservas() {
+        return ResponseEntity.ok(reservaService.obtenerTodas());
+    }
+
     @PostMapping
     public ResponseEntity<ReservaResponseDTO> registrarReserva(@Valid @RequestBody ReservaRequestDTO requestDTO) {
         ReservaResponseDTO response = reservaService.registrarReserva(requestDTO);
