@@ -1,6 +1,7 @@
 package com.aleslul.biblioteca.dto;
 
 import lombok.Data;
+import java.time.LocalDate;
 
 @Data
 public class UsuarioDTO {
@@ -8,4 +9,8 @@ public class UsuarioDTO {
     private String nombre;
     private String correo;
     private String nombreRol;
+    private String telefono;
+    private String dni;
+    private LocalDate fechaMembresia;
+    private String estado;
 }

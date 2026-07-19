@@ -20,6 +20,6 @@ public interface LibroRepository extends JpaRepository<Libro, Integer> {
                                  @Param("isbn") String isbn,
                                  @Param("categoria") String category);
 
-    // RF10: libros disponibles para cruzar contra reservas pendientes
-    List<Libro> findByDisponibleTrue();
+    // RF10: libros con al menos una copia disponible, para cruzar contra reservas pendientes
+    List<Libro> findByCopiesAvailableGreaterThan(int copias);
 }

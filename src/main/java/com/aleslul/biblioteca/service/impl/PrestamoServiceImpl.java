@@ -10,11 +10,13 @@ import com.aleslul.biblioteca.model.Libro;
 import com.aleslul.biblioteca.model.Prestamo;
 import com.aleslul.biblioteca.model.Reserva;
 import com.aleslul.biblioteca.model.Usuario;
+import com.aleslul.biblioteca.model.enums.EstadoMulta;
 import com.aleslul.biblioteca.model.enums.EstadoPrestamo;
 import com.aleslul.biblioteca.model.enums.EstadoReserva;
 import com.aleslul.biblioteca.model.enums.TipoAccion;
 import com.aleslul.biblioteca.repository.DetallePrestamoRepository;
 import com.aleslul.biblioteca.repository.LibroRepository;
+import com.aleslul.biblioteca.repository.MultaRepository;
 import com.aleslul.biblioteca.repository.PrestamoRepository;
 import com.aleslul.biblioteca.repository.ReservaRepository;
 import com.aleslul.biblioteca.repository.UsuarioRepository;
@@ -48,6 +50,9 @@ public class PrestamoServiceImpl implements PrestamoService {
     private ReservaRepository reservaRepository;
 
     @Autowired
+    private MultaRepository multaRepository;
+
+    @Autowired
     private LogSistemaService logSistemaService;
 
     // DS07 - RF-07: ventana de renovación (horas antes del vencimiento) y días que se extiende
@@ -63,6 +68,11 @@ public class PrestamoServiceImpl implements PrestamoService {
         // 1. Validar existencia del usuario
         Usuario usuario = usuarioRepository.findById(requestDTO.getIdUsuario())
                 .orElseThrow(() -> new RecursoNoEncontradoException("Usuario no registrado en el sistema con ID: " + requestDTO.getIdUsuario()));
+
+        // 1.1. Bloquear si el usuario tiene multas pendientes de pago
+        if (multaRepository.existsByDevolucion_Prestamo_Usuario_IdAndEstado(usuario.getId(), EstadoMulta.PENDIENTE)) {
+            throw new ReglaNegocioException("El usuario tiene multas pendientes de pago; no puede registrar nuevos préstamos/reservas/renovaciones");
+        }
 
         // 2. Instanciar la cabecera del préstamo
         Prestamo prestamo = new Prestamo();
@@ -84,7 +94,7 @@ public class PrestamoServiceImpl implements PrestamoService {
                     .orElseThrow(() -> new RecursoNoEncontradoException("El libro con ID " + idLibro + " no existe"));
 
             if (!libro.isDisponible()) {
-                throw new ReglaNegocioException("El libro '" + libro.getTitulo() + "' ya está ocupado");
+                throw new ReglaNegocioException("El libro '" + libro.getTitulo() + "' no tiene copias disponibles");
             }
 
             // --- INICIO LÓGICA RF9: Gestión y validación de reservas ---
@@ -106,8 +116,8 @@ public class PrestamoServiceImpl implements PrestamoService {
             }
             // --- FIN LÓGICA RF9 ---
 
-            // Cambiar disponibilidad del libro a inactivo (ocupado)
-            libro.setDisponible(false);
+            // Descontar una copia disponible del stock (ya no se marca el "único" ejemplar como ocupado)
+            libro.setCopiesAvailable(libro.getCopiesAvailable() - 1);
             libroRepository.save(libro);
 
             DetallePrestamo detalle = new DetallePrestamo();
@@ -162,6 +172,11 @@ public class PrestamoServiceImpl implements PrestamoService {
         // 1. Validar existencia del préstamo
         Prestamo prestamo = prestamoRepository.findById(idPrestamo)
                 .orElseThrow(() -> new RecursoNoEncontradoException("Préstamo no encontrado con ID: " + idPrestamo));
+
+        // 1.1. Bloquear si el usuario tiene multas pendientes de pago
+        if (multaRepository.existsByDevolucion_Prestamo_Usuario_IdAndEstado(prestamo.getUsuario().getId(), EstadoMulta.PENDIENTE)) {
+            throw new ReglaNegocioException("El usuario tiene multas pendientes de pago; no puede registrar nuevos préstamos/reservas/renovaciones");
+        }
 
         // 2. Solo se puede renovar un préstamo vigente (ACTIVO o ya RENOVADO antes)
         if (prestamo.getEstado() == EstadoPrestamo.DEVUELTO) {

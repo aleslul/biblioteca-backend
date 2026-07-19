@@ -11,4 +11,6 @@ public interface UsuarioService {
     void eliminarUsuario(int id);
     // DS02 - RF-02: Gestión dinámica de roles
     UsuarioDTO actualizarRol(int idUsuario, int idRol);
+    // RF pendiente: edición general (nombre, correo, teléfono, DNI, status, rol)
+    UsuarioDTO actualizarUsuario(int idUsuario, com.aleslul.biblioteca.dto.request.UsuarioActualizarRequestDTO datos);
 }

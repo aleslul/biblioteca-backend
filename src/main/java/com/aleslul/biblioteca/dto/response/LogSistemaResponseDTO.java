@@ -9,6 +9,7 @@ public class LogSistemaResponseDTO {
     private int idUsuario;
     private String nombreUsuario;
     private String tipoAccion;
+    private String severidad;
     private String descripccion; // Respeta exactamente el nombre de atributo 'descripccion' del modelo original
     private LocalDateTime fechaRegistro;
 }

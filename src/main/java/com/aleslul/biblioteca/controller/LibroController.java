@@ -28,7 +28,12 @@ public class LibroController {
         libro.setIsbn(requestDTO.getIsbn());
         libro.setCategoria(requestDTO.getCategoria());
         libro.setPrecio(requestDTO.getPrecio());
-        libro.setDisponible(true);
+        libro.setAnioPublicacion(requestDTO.getAnioPublicacion());
+        libro.setUbicacion(requestDTO.getUbicacion());
+        libro.setDescripcion(requestDTO.getDescripcion());
+        libro.setUrlPortada(requestDTO.getUrlPortada());
+        libro.setCopiesTotal(requestDTO.getCopiesTotal());
+        libro.setCopiesAvailable(requestDTO.getCopiesTotal());
 
         Libro libroGuardado = libroService.guardarLibro(libro);
         return new ResponseEntity<>(convertToDTO(libroGuardado), HttpStatus.CREATED);
@@ -60,6 +65,30 @@ public class LibroController {
         return ResponseEntity.ok(response);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<LibroResponseDTO> actualizarLibro(@PathVariable int id, @Valid @RequestBody LibroRequestDTO requestDTO) {
+        Libro datosActualizados = new Libro();
+        datosActualizados.setTitulo(requestDTO.getTitulo());
+        datosActualizados.setAutor(requestDTO.getAutor());
+        datosActualizados.setIsbn(requestDTO.getIsbn());
+        datosActualizados.setCategoria(requestDTO.getCategoria());
+        datosActualizados.setPrecio(requestDTO.getPrecio());
+        datosActualizados.setAnioPublicacion(requestDTO.getAnioPublicacion());
+        datosActualizados.setUbicacion(requestDTO.getUbicacion());
+        datosActualizados.setDescripcion(requestDTO.getDescripcion());
+        datosActualizados.setUrlPortada(requestDTO.getUrlPortada());
+        datosActualizados.setCopiesTotal(requestDTO.getCopiesTotal());
+
+        Libro libroActualizado = libroService.actualizarLibro(id, datosActualizados);
+        return ResponseEntity.ok(convertToDTO(libroActualizado));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminarLibro(@PathVariable int id) {
+        libroService.eliminarLibro(id);
+        return ResponseEntity.noContent().build();
+    }
+
     private LibroResponseDTO convertToDTO(Libro libro) {
         LibroResponseDTO dto = new LibroResponseDTO();
         dto.setId(libro.getId());
@@ -68,6 +97,12 @@ public class LibroController {
         dto.setIsbn(libro.getIsbn());
         dto.setCategoria(libro.getCategoria());
         dto.setPrecio(libro.getPrecio());
+        dto.setAnioPublicacion(libro.getAnioPublicacion());
+        dto.setUbicacion(libro.getUbicacion());
+        dto.setDescripcion(libro.getDescripcion());
+        dto.setUrlPortada(libro.getUrlPortada());
+        dto.setCopiesTotal(libro.getCopiesTotal());
+        dto.setCopiesAvailable(libro.getCopiesAvailable());
         dto.setDisponible(libro.isDisponible());
         return dto;
     }

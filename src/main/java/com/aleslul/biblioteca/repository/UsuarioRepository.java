@@ -9,4 +9,7 @@ import java.util.Optional;
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     // Para buscar un usuario por su correo durante el login
     Optional<Usuario> findByCorreo(String correo);
+
+    // Para validar unicidad del DNI (la maqueta lo exige obligatorio y único)
+    boolean existsByDni(String dni);
 }

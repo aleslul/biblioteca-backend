@@ -39,6 +39,7 @@ public class LogSistemaController {
         dto.setIdUsuario(log.getUsuario().getId());
         dto.setNombreUsuario(log.getUsuario().getNombre());
         dto.setTipoAccion(log.getTipoAccion().name());
+        dto.setSeveridad(log.getSeveridad() != null ? log.getSeveridad().name() : null);
         dto.setDescripccion(log.getDescripccion()); // Mapeado exactamente al atributo de tu modelo
         dto.setFechaRegistro(log.getFechaRegistro());
         return dto;

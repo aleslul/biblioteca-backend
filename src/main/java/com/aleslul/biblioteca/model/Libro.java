@@ -1,7 +1,6 @@
 package com.aleslul.biblioteca.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,7 +10,6 @@ import java.math.BigDecimal;
 @Table(name = "libros")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Libro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +31,32 @@ public class Libro {
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal precio;
 
-    @Column(nullable = false)
-    private boolean disponible = true;
+    // --- Campos requeridos por la maqueta (RF pendiente: alineación de modelo Libro) ---
+    @Column(name = "anio_publicacion")
+    private Integer anioPublicacion;
+
+    @Column(name = "ubicacion", length = 50)
+    private String ubicacion;
+
+    @Column(name = "descripcion", columnDefinition = "TEXT")
+    private String descripcion;
+
+    @Column(name = "url_portada", length = 500)
+    private String urlPortada;
+
+    // --- Modelo de stock (decisión de diseño: copies en vez de "1 fila = 1 ejemplar") ---
+    @Column(name = "copias_totales", nullable = false)
+    private int copiesTotal = 1;
+
+    @Column(name = "copias_disponibles", nullable = false)
+    private int copiesAvailable = 1;
+
+    /**
+     * Compatibilidad con el código existente que preguntaba por disponibilidad de "el" ejemplar.
+     * Ahora un libro está disponible si le queda al menos una copia libre.
+     * No es un campo persistido: se deriva de copiesAvailable.
+     */
+    public boolean isDisponible() {
+        return copiesAvailable > 0;
+    }
 }

@@ -27,9 +27,16 @@ public class CustomUserDetailsService implements UserDetailsService {
         // por ejemplo NombreRol.ADMINISTRADOR -> "ROLE_ADMINISTRADOR"
         String authority = "ROLE_" + usuario.getRol().getNombre().name();
 
+        // RF pendiente: un usuario con estado INACTIVO no puede autenticarse
+        boolean habilitado = usuario.getEstado() == com.aleslul.biblioteca.model.enums.EstadoUsuario.ACTIVO;
+
         return new User(
                 usuario.getCorreo(),
                 usuario.getContrasena(),
+                habilitado,
+                true,
+                true,
+                true,
                 List.of(new SimpleGrantedAuthority(authority))
         );
     }

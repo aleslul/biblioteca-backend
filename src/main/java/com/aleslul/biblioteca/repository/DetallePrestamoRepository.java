@@ -20,6 +20,9 @@ public interface DetallePrestamoRepository extends JpaRepository<DetallePrestamo
     // Para verificar si queda algún libro sin devolver en un préstamo
     List<DetallePrestamo> findByPrestamoIdAndDevueltoFalse(int idPrestamo);
 
+    // Para bloquear el borrado de un libro que sigue prestado (RF pendiente: DELETE /api/libros/{id})
+    boolean existsByLibro_IdAndDevueltoFalse(int idLibro);
+
     // RF9: libros más solicitados, opcionalmente acotado a un período (por fecha de préstamo)
     @Query("SELECT new com.aleslul.biblioteca.dto.response.LibroMasSolicitadoResponseDTO(" +
             "d.libro.id, d.libro.titulo, d.libro.autor, COUNT(d)) " +

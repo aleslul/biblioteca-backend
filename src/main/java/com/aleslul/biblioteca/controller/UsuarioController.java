@@ -3,6 +3,7 @@ package com.aleslul.biblioteca.controller;
 import com.aleslul.biblioteca.dto.UsuarioDTO;
 import com.aleslul.biblioteca.dto.UsuarioRegistroDTO;
 import com.aleslul.biblioteca.dto.request.ActualizarRolRequestDTO;
+import com.aleslul.biblioteca.dto.request.UsuarioActualizarRequestDTO;
 import com.aleslul.biblioteca.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,16 @@ public class UsuarioController {
     // DS02 - RF-02: Gestión dinámica de roles
     @PutMapping("/{id}/rol")
     public ResponseEntity<UsuarioDTO> actualizarRol(@PathVariable int id,
-                                                     @Valid @RequestBody ActualizarRolRequestDTO requestDTO) {
+                                                    @Valid @RequestBody ActualizarRolRequestDTO requestDTO) {
         UsuarioDTO usuarioActualizado = usuarioService.actualizarRol(id, requestDTO.getIdRol());
+        return ResponseEntity.ok(usuarioActualizado);
+    }
+
+    // RF pendiente: edición general (nombre, correo, teléfono, DNI, status, rol) en un solo submit
+    @PutMapping("/{id}")
+    public ResponseEntity<UsuarioDTO> actualizarUsuario(@PathVariable int id,
+                                                        @Valid @RequestBody UsuarioActualizarRequestDTO requestDTO) {
+        UsuarioDTO usuarioActualizado = usuarioService.actualizarUsuario(id, requestDTO);
         return ResponseEntity.ok(usuarioActualizado);
     }
 

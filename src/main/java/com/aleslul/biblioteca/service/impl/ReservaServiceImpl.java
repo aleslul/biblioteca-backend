@@ -8,8 +8,10 @@ import com.aleslul.biblioteca.exception.ReglaNegocioException;
 import com.aleslul.biblioteca.model.Libro;
 import com.aleslul.biblioteca.model.Reserva;
 import com.aleslul.biblioteca.model.Usuario;
+import com.aleslul.biblioteca.model.enums.EstadoMulta;
 import com.aleslul.biblioteca.model.enums.EstadoReserva;
 import com.aleslul.biblioteca.repository.LibroRepository;
+import com.aleslul.biblioteca.repository.MultaRepository;
 import com.aleslul.biblioteca.repository.ReservaRepository;
 import com.aleslul.biblioteca.repository.UsuarioRepository;
 import com.aleslul.biblioteca.service.ReservaService;
@@ -32,6 +34,9 @@ public class ReservaServiceImpl implements ReservaService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @Autowired
+    private MultaRepository multaRepository;
+
     @Override
     public ReservaResponseDTO registrarReserva(ReservaRequestDTO requestDTO) {
         Libro libro = libroRepository.findById(requestDTO.getIdLibro())
@@ -39,6 +44,11 @@ public class ReservaServiceImpl implements ReservaService {
 
         Usuario usuario = usuarioRepository.findById(requestDTO.getIdUsuario())
                 .orElseThrow(() -> new RecursoNoEncontradoException("Usuario no encontrado con ID: " + requestDTO.getIdUsuario()));
+
+        // Bloquear si el usuario tiene multas pendientes de pago
+        if (multaRepository.existsByDevolucion_Prestamo_Usuario_IdAndEstado(usuario.getId(), EstadoMulta.PENDIENTE)) {
+            throw new ReglaNegocioException("El usuario tiene multas pendientes de pago; no puede registrar nuevos préstamos/reservas/renovaciones");
+        }
 
         if (libro.isDisponible()) {
             throw new ReglaNegocioException("El libro '" + libro.getTitulo() + "' está disponible; no es necesario reservarlo");

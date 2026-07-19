@@ -1,5 +1,6 @@
 package com.aleslul.biblioteca.model;
 
+import com.aleslul.biblioteca.model.enums.Severidad;
 import com.aleslul.biblioteca.model.enums.TipoAccion;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -22,6 +23,10 @@ public class LogSistema {
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_accion", nullable = false)
     private TipoAccion tipoAccion;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "severidad", length = 20, nullable = false)
+    private Severidad severidad;
 
     @Column(length = 500)
     private String descripccion;

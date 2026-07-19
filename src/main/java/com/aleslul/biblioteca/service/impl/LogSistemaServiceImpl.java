@@ -3,6 +3,7 @@ package com.aleslul.biblioteca.service.impl;
 import com.aleslul.biblioteca.exception.RecursoNoEncontradoException;
 import com.aleslul.biblioteca.model.LogSistema;
 import com.aleslul.biblioteca.model.Usuario;
+import com.aleslul.biblioteca.model.enums.Severidad;
 import com.aleslul.biblioteca.model.enums.TipoAccion;
 import com.aleslul.biblioteca.repository.LogSistemaRepository;
 import com.aleslul.biblioteca.repository.UsuarioRepository;
@@ -29,6 +30,7 @@ public class LogSistemaServiceImpl implements LogSistemaService {
         LogSistema log = new LogSistema();
         log.setUsuario(usuario);
         log.setTipoAccion(tipoAccion);
+        log.setSeveridad(mapearSeveridad(tipoAccion));
         log.setDescripccion(descripcion); // Mapeado exactamente al atributo 'descripccion' de tu entidad[cite: 2]
         log.setFechaRegistro(LocalDateTime.now());
 
@@ -43,5 +45,22 @@ public class LogSistemaServiceImpl implements LogSistemaService {
     @Override
     public List<LogSistema> obtenerLogsPorUsuario(int idUsuario) {
         return logSistemaRepository.findByUsuarioId(idUsuario);
+    }
+
+    // RF pendiente: severidad esperada por la maqueta ('INFO' | 'WARNING' | 'CRITICAL')
+    private Severidad mapearSeveridad(TipoAccion tipoAccion) {
+        switch (tipoAccion) {
+            case NOTIFICACION_MULTA_APLICADA:
+                return Severidad.CRITICAL;
+            case REGISTRO_PRESTAMO:
+            case RENOVACION_PRESTAMO:
+            case NOTIFICACION_VENCIMIENTO:
+            case NOTIFICACION_LIBRO_DISPONIBLE:
+            case REPORTE_CIRCULACION:
+            case REPORTE_LIBROS_SOLICITADOS:
+            case REPORTE_ESTADISTICAS:
+            default:
+                return Severidad.INFO;
+        }
     }
 }

@@ -8,4 +8,6 @@ public interface LibroService {
     Libro obtenerPorId(int id);
     List<Libro> listarTodos();
     List<Libro> buscarLibros(String titulo, String autor, String isbn, String categoria);
+    Libro actualizarLibro(int id, Libro datosActualizados);
+    void eliminarLibro(int id);
 }

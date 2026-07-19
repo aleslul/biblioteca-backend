@@ -11,5 +11,11 @@ public class LibroResponseDTO {
     private String isbn;
     private String categoria;
     private BigDecimal precio;
+    private Integer anioPublicacion;
+    private String ubicacion;
+    private String descripcion;
+    private String urlPortada;
+    private int copiesTotal;
+    private int copiesAvailable;
     private boolean disponible;
 }

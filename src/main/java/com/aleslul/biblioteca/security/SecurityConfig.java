@@ -79,11 +79,14 @@ public class SecurityConfig {
                         // Operaciones administrativas sensibles: solo ADMINISTRADOR
                         .requestMatchers(HttpMethod.DELETE, "/api/usuarios/**").hasRole("ADMINISTRADOR")
                         .requestMatchers(HttpMethod.PUT, "/api/usuarios/*/rol").hasRole("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.PUT, "/api/usuarios/*").hasRole("ADMINISTRADOR")
                         .requestMatchers("/api/multas/**").hasRole("ADMINISTRADOR")
                         .requestMatchers(HttpMethod.GET, "/api/logs/**").hasRole("ADMINISTRADOR")
 
                         // Circulacion de materiales: BIBLIOTECARIO o ADMINISTRADOR
                         .requestMatchers(HttpMethod.POST, "/api/libros").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
+                        .requestMatchers(HttpMethod.PUT, "/api/libros/*").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
+                        .requestMatchers(HttpMethod.DELETE, "/api/libros/*").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
                         .requestMatchers(HttpMethod.POST, "/api/prestamos").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
                         .requestMatchers(HttpMethod.POST, "/api/devoluciones").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
 

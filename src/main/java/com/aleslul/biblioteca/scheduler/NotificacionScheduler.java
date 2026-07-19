@@ -74,7 +74,7 @@ public class NotificacionScheduler {
     }
 
     private void notificarLibrosDisponibles() {
-        List<Libro> librosDisponibles = libroRepository.findByDisponibleTrue();
+        List<Libro> librosDisponibles = libroRepository.findByCopiesAvailableGreaterThan(0);
 
         for (Libro libro : librosDisponibles) {
             List<Reserva> reservasActivas = reservaRepository

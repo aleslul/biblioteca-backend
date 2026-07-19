@@ -83,7 +83,7 @@ public class DevolucionServiceImpl implements DevolucionService {
             detallePrestamoRepository.save(detalle);
 
             Libro libro = detalle.getLibro();
-            libro.setDisponible(true);
+            libro.setCopiesAvailable(libro.getCopiesAvailable() + 1);
             libroRepository.save(libro);
 
             valorTotalLibros = valorTotalLibros.add(libro.getPrecio());
