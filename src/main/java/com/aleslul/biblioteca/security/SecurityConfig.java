@@ -91,7 +91,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/libros").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
                         .requestMatchers(HttpMethod.PUT, "/api/libros/*").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
                         .requestMatchers(HttpMethod.DELETE, "/api/libros/*").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
-                        .requestMatchers(HttpMethod.POST, "/api/prestamos").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
+                        .requestMatchers(HttpMethod.POST, "/api/prestamos").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO", "USUARIO_FINAL")
                         .requestMatchers(HttpMethod.POST, "/api/devoluciones").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
 
                         // RF9: reportes de circulación, solo personal de biblioteca

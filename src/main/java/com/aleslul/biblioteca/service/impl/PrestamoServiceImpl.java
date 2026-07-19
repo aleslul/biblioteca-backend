@@ -30,6 +30,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import com.aleslul.biblioteca.exception.AccesoDenegadoException;
+import com.aleslul.biblioteca.model.enums.NombreRol;
+import com.aleslul.biblioteca.security.UsuarioAutenticadoHelper;
 
 @Service
 public class PrestamoServiceImpl implements PrestamoService {
@@ -55,6 +58,9 @@ public class PrestamoServiceImpl implements PrestamoService {
     @Autowired
     private LogSistemaService logSistemaService;
 
+    @Autowired
+    private UsuarioAutenticadoHelper usuarioAutenticadoHelper;
+
     // DS07 - RF-07: ventana de renovación (horas antes del vencimiento) y días que se extiende
     @Value("${app.prestamos.horas-ventana-renovacion}")
     private long horasVentanaRenovacion;
@@ -68,6 +74,14 @@ public class PrestamoServiceImpl implements PrestamoService {
         // 1. Validar existencia del usuario
         Usuario usuario = usuarioRepository.findById(requestDTO.getIdUsuario())
                 .orElseThrow(() -> new RecursoNoEncontradoException("Usuario no registrado en el sistema con ID: " + requestDTO.getIdUsuario()));
+
+        // 1.0 Un usuario final solo puede solicitar préstamos para sí mismo (autoservicio).
+        // ADMINISTRADOR/BIBLIOTECARIO conservan la posibilidad de registrar a nombre de cualquier usuario (ej. en el mostrador).
+        Usuario usuarioAutenticado = usuarioAutenticadoHelper.obtenerUsuarioActual();
+        boolean esUsuarioFinal = usuarioAutenticado.getRol().getNombre() == NombreRol.USUARIO_FINAL;
+        if (esUsuarioFinal && !usuarioAutenticado.getId().equals(requestDTO.getIdUsuario())) {
+            throw new AccesoDenegadoException("Un usuario no puede solicitar préstamos a nombre de otro usuario");
+        }
 
         // 1.1. Bloquear si el usuario tiene multas pendientes de pago
         if (multaRepository.existsByDevolucion_Prestamo_Usuario_IdAndEstado(usuario.getId(), EstadoMulta.PENDIENTE)) {

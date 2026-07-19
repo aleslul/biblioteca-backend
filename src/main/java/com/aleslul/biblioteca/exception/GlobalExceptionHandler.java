@@ -9,6 +9,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import com.aleslul.biblioteca.exception.AccesoDenegadoException;
 
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
@@ -74,6 +75,21 @@ public class GlobalExceptionHandler {
                 request.getRequestURI()
         );
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    // 2.b Captura cuando un usuario intenta actuar sobre un recurso que no es suyo (HTTP 403 FORBIDDEN)
+    @ExceptionHandler(AccesoDenegadoException.class)
+    public ResponseEntity<ErrorResponseDTO> manejarAccesoDenegado(
+            AccesoDenegadoException ex, HttpServletRequest request) {
+
+        ErrorResponseDTO error = new ErrorResponseDTO(
+                LocalDateTime.now(),
+                HttpStatus.FORBIDDEN.value(),
+                "Acceso denegado",
+                ex.getMessage(),
+                request.getRequestURI()
+        );
+        return new ResponseEntity<>(error, HttpStatus.FORBIDDEN);
     }
 
     // 3. Captura errores de Bean Validation (@Valid) en los DTOs de request (HTTP 400 BAD REQUEST)
