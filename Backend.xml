@@ -1,0 +1,4800 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitattributes
+.gitignore
+.mvn/wrapper/maven-wrapper.properties
+Dockerfile
+mvnw
+mvnw.cmd
+pom.xml
+README.md
+src/main/java/com/aleslul/biblioteca/BibliotecaApplication.java
+src/main/java/com/aleslul/biblioteca/controller/AuthController.java
+src/main/java/com/aleslul/biblioteca/controller/DetallePrestamoController.java
+src/main/java/com/aleslul/biblioteca/controller/DevolucionController.java
+src/main/java/com/aleslul/biblioteca/controller/LibroController.java
+src/main/java/com/aleslul/biblioteca/controller/LogSistemaController.java
+src/main/java/com/aleslul/biblioteca/controller/MultaController.java
+src/main/java/com/aleslul/biblioteca/controller/NotificacionController.java
+src/main/java/com/aleslul/biblioteca/controller/PrestamoControlller.java
+src/main/java/com/aleslul/biblioteca/controller/ReporteController.java
+src/main/java/com/aleslul/biblioteca/controller/ReservaController.java
+src/main/java/com/aleslul/biblioteca/controller/RolController.java
+src/main/java/com/aleslul/biblioteca/controller/UsuarioController.java
+src/main/java/com/aleslul/biblioteca/dto/request/ActualizarRolRequestDTO.java
+src/main/java/com/aleslul/biblioteca/dto/request/DevolucionRequestDTO.java
+src/main/java/com/aleslul/biblioteca/dto/request/LibroRequestDTO.java
+src/main/java/com/aleslul/biblioteca/dto/request/LoginRequestDTO.java
+src/main/java/com/aleslul/biblioteca/dto/request/PrestamoRequestDTO.java
+src/main/java/com/aleslul/biblioteca/dto/request/ReservaRequestDTO.java
+src/main/java/com/aleslul/biblioteca/dto/request/UsuarioActualizarRequestDTO.java
+src/main/java/com/aleslul/biblioteca/dto/response/DetallePrestamoResponseDTO.java
+src/main/java/com/aleslul/biblioteca/dto/response/DevolucionResponseDTO.java
+src/main/java/com/aleslul/biblioteca/dto/response/ErrorResponseDTO.java
+src/main/java/com/aleslul/biblioteca/dto/response/LibroMasSolicitadoResponseDTO.java
+src/main/java/com/aleslul/biblioteca/dto/response/LibroResponseDTO.java
+src/main/java/com/aleslul/biblioteca/dto/response/LoginResponseDTO.java
+src/main/java/com/aleslul/biblioteca/dto/response/LogSistemaResponseDTO.java
+src/main/java/com/aleslul/biblioteca/dto/response/MultaResponseDTO.java
+src/main/java/com/aleslul/biblioteca/dto/response/NotificacionResponseDTO.java
+src/main/java/com/aleslul/biblioteca/dto/response/PrestamoResponseDTO.java
+src/main/java/com/aleslul/biblioteca/dto/response/ReporteCirculacionResponseDTO.java
+src/main/java/com/aleslul/biblioteca/dto/response/ReservaResponseDTO.java
+src/main/java/com/aleslul/biblioteca/dto/RolDTO.java
+src/main/java/com/aleslul/biblioteca/dto/UsuarioDTO.java
+src/main/java/com/aleslul/biblioteca/dto/UsuarioRegistroDTO.java
+src/main/java/com/aleslul/biblioteca/exception/AccesoDenegadoException.java
+src/main/java/com/aleslul/biblioteca/exception/GlobalExceptionHandler.java
+src/main/java/com/aleslul/biblioteca/exception/RecursoDuplicadoException.java
+src/main/java/com/aleslul/biblioteca/exception/RecursoNoEncontradoException.java
+src/main/java/com/aleslul/biblioteca/exception/ReglaNegocioException.java
+src/main/java/com/aleslul/biblioteca/model/DetallePrestamo.java
+src/main/java/com/aleslul/biblioteca/model/Devolucion.java
+src/main/java/com/aleslul/biblioteca/model/enums/EstadoMulta.java
+src/main/java/com/aleslul/biblioteca/model/enums/EstadoPrestamo.java
+src/main/java/com/aleslul/biblioteca/model/enums/EstadoReserva.java
+src/main/java/com/aleslul/biblioteca/model/enums/EstadoUsuario.java
+src/main/java/com/aleslul/biblioteca/model/enums/NombreRol.java
+src/main/java/com/aleslul/biblioteca/model/enums/Severidad.java
+src/main/java/com/aleslul/biblioteca/model/enums/TipoAccion.java
+src/main/java/com/aleslul/biblioteca/model/enums/TipoNotificacion.java
+src/main/java/com/aleslul/biblioteca/model/Libro.java
+src/main/java/com/aleslul/biblioteca/model/LogSistema.java
+src/main/java/com/aleslul/biblioteca/model/Multa.java
+src/main/java/com/aleslul/biblioteca/model/Notificacion.java
+src/main/java/com/aleslul/biblioteca/model/Prestamo.java
+src/main/java/com/aleslul/biblioteca/model/Reserva.java
+src/main/java/com/aleslul/biblioteca/model/Rol.java
+src/main/java/com/aleslul/biblioteca/model/Usuario.java
+src/main/java/com/aleslul/biblioteca/repository/DetallePrestamoRepository.java
+src/main/java/com/aleslul/biblioteca/repository/DevolucionRepository.java
+src/main/java/com/aleslul/biblioteca/repository/LibroRepository.java
+src/main/java/com/aleslul/biblioteca/repository/LogSistemaRepository.java
+src/main/java/com/aleslul/biblioteca/repository/MultaRepository.java
+src/main/java/com/aleslul/biblioteca/repository/NotificacionRepository.java
+src/main/java/com/aleslul/biblioteca/repository/PrestamoRepository.java
+src/main/java/com/aleslul/biblioteca/repository/ReservaRepository.java
+src/main/java/com/aleslul/biblioteca/repository/RolRepository.java
+src/main/java/com/aleslul/biblioteca/repository/UsuarioRepository.java
+src/main/java/com/aleslul/biblioteca/scheduler/NotificacionScheduler.java
+src/main/java/com/aleslul/biblioteca/security/CustomUserDetailsService.java
+src/main/java/com/aleslul/biblioteca/security/JwtAuthenticationFilter.java
+src/main/java/com/aleslul/biblioteca/security/JwtService.java
+src/main/java/com/aleslul/biblioteca/security/SecurityConfig.java
+src/main/java/com/aleslul/biblioteca/security/UsuarioAutenticadoHelper.java
+src/main/java/com/aleslul/biblioteca/service/DetallePrestamoService.java
+src/main/java/com/aleslul/biblioteca/service/DevolucionService.java
+src/main/java/com/aleslul/biblioteca/service/impl/DetallePrestamoServiceImpl.java
+src/main/java/com/aleslul/biblioteca/service/impl/DevolucionServiceImpl.java
+src/main/java/com/aleslul/biblioteca/service/impl/LibroServiceImpl.java
+src/main/java/com/aleslul/biblioteca/service/impl/LogSistemaServiceImpl.java
+src/main/java/com/aleslul/biblioteca/service/impl/MultaServiceImpl.java
+src/main/java/com/aleslul/biblioteca/service/impl/NotificacionServiceImpl.java
+src/main/java/com/aleslul/biblioteca/service/impl/PrestamoServiceImpl.java
+src/main/java/com/aleslul/biblioteca/service/impl/ReporteServiceImpl.java
+src/main/java/com/aleslul/biblioteca/service/impl/ReservaServiceImpl.java
+src/main/java/com/aleslul/biblioteca/service/impl/RolServiceImpl.java
+src/main/java/com/aleslul/biblioteca/service/impl/UsuarioServiceImpl.java
+src/main/java/com/aleslul/biblioteca/service/LibroService.java
+src/main/java/com/aleslul/biblioteca/service/LogSistemaService.java
+src/main/java/com/aleslul/biblioteca/service/MultaService.java
+src/main/java/com/aleslul/biblioteca/service/NotificacionService.java
+src/main/java/com/aleslul/biblioteca/service/PrestamoService.java
+src/main/java/com/aleslul/biblioteca/service/ReporteService.java
+src/main/java/com/aleslul/biblioteca/service/ReservaService.java
+src/main/java/com/aleslul/biblioteca/service/RolService.java
+src/main/java/com/aleslul/biblioteca/service/UsuarioService.java
+src/main/java/com/aleslul/biblioteca/validation/CorreoInstitucional.java
+src/main/java/com/aleslul/biblioteca/validation/CorreoInstitucionalValidator.java
+src/main/resources/application.properties
+src/test/java/com/aleslul/biblioteca/BibliotecaApplicationTests.java
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".gitattributes">
+/mvnw text eol=lf
+*.cmd text eol=crlf
+</file>
+
+<file path=".gitignore">
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+repomix-output.xml
+</file>
+
+<file path=".mvn/wrapper/maven-wrapper.properties">
+wrapperVersion=3.3.4
+distributionType=only-script
+distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.16/apache-maven-3.9.16-bin.zip
+</file>
+
+<file path="Dockerfile">
+# --- Etapa 1: compilar el proyecto con Maven ---
+FROM maven:3.9-eclipse-temurin-26 AS build
+WORKDIR /app
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
+COPY src ./src
+RUN mvn clean package -DskipTests
+
+# --- Etapa 2: imagen final, solo con el jar ya compilado ---
+FROM eclipse-temurin:26-jre
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
+
+# Render inyecta la variable PORT; le decimos a Spring que la use
+ENV PORT=8081
+EXPOSE 8081
+ENTRYPOINT ["sh", "-c", "java -jar app.jar --server.port=${PORT}"]
+</file>
+
+<file path="mvnw">
+#!/bin/sh
+# ----------------------------------------------------------------------------
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Apache Maven Wrapper startup batch script, version 3.3.4
+#
+# Optional ENV vars
+# -----------------
+#   JAVA_HOME - location of a JDK home dir, required when download maven via java source
+#   MVNW_REPOURL - repo url base for downloading maven distribution
+#   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
+#   MVNW_VERBOSE - true: enable verbose log; debug: trace the mvnw script; others: silence the output
+# ----------------------------------------------------------------------------
+
+set -euf
+[ "${MVNW_VERBOSE-}" != debug ] || set -x
+
+# OS specific support.
+native_path() { printf %s\\n "$1"; }
+case "$(uname)" in
+CYGWIN* | MINGW*)
+  [ -z "${JAVA_HOME-}" ] || JAVA_HOME="$(cygpath --unix "$JAVA_HOME")"
+  native_path() { cygpath --path --windows "$1"; }
+  ;;
+esac
+
+# set JAVACMD and JAVACCMD
+set_java_home() {
+  # For Cygwin and MinGW, ensure paths are in Unix format before anything is touched
+  if [ -n "${JAVA_HOME-}" ]; then
+    if [ -x "$JAVA_HOME/jre/sh/java" ]; then
+      # IBM's JDK on AIX uses strange locations for the executables
+      JAVACMD="$JAVA_HOME/jre/sh/java"
+      JAVACCMD="$JAVA_HOME/jre/sh/javac"
+    else
+      JAVACMD="$JAVA_HOME/bin/java"
+      JAVACCMD="$JAVA_HOME/bin/javac"
+
+      if [ ! -x "$JAVACMD" ] || [ ! -x "$JAVACCMD" ]; then
+        echo "The JAVA_HOME environment variable is not defined correctly, so mvnw cannot run." >&2
+        echo "JAVA_HOME is set to \"$JAVA_HOME\", but \"\$JAVA_HOME/bin/java\" or \"\$JAVA_HOME/bin/javac\" does not exist." >&2
+        return 1
+      fi
+    fi
+  else
+    JAVACMD="$(
+      'set' +e
+      'unset' -f command 2>/dev/null
+      'command' -v java
+    )" || :
+    JAVACCMD="$(
+      'set' +e
+      'unset' -f command 2>/dev/null
+      'command' -v javac
+    )" || :
+
+    if [ ! -x "${JAVACMD-}" ] || [ ! -x "${JAVACCMD-}" ]; then
+      echo "The java/javac command does not exist in PATH nor is JAVA_HOME set, so mvnw cannot run." >&2
+      return 1
+    fi
+  fi
+}
+
+# hash string like Java String::hashCode
+hash_string() {
+  str="${1:-}" h=0
+  while [ -n "$str" ]; do
+    char="${str%"${str#?}"}"
+    h=$(((h * 31 + $(LC_CTYPE=C printf %d "'$char")) % 4294967296))
+    str="${str#?}"
+  done
+  printf %x\\n $h
+}
+
+verbose() { :; }
+[ "${MVNW_VERBOSE-}" != true ] || verbose() { printf %s\\n "${1-}"; }
+
+die() {
+  printf %s\\n "$1" >&2
+  exit 1
+}
+
+trim() {
+  # MWRAPPER-139:
+  #   Trims trailing and leading whitespace, carriage returns, tabs, and linefeeds.
+  #   Needed for removing poorly interpreted newline sequences when running in more
+  #   exotic environments such as mingw bash on Windows.
+  printf "%s" "${1}" | tr -d '[:space:]'
+}
+
+scriptDir="$(dirname "$0")"
+scriptName="$(basename "$0")"
+
+# parse distributionUrl and optional distributionSha256Sum, requires .mvn/wrapper/maven-wrapper.properties
+while IFS="=" read -r key value; do
+  case "${key-}" in
+  distributionUrl) distributionUrl=$(trim "${value-}") ;;
+  distributionSha256Sum) distributionSha256Sum=$(trim "${value-}") ;;
+  esac
+done <"$scriptDir/.mvn/wrapper/maven-wrapper.properties"
+[ -n "${distributionUrl-}" ] || die "cannot read distributionUrl property in $scriptDir/.mvn/wrapper/maven-wrapper.properties"
+
+case "${distributionUrl##*/}" in
+maven-mvnd-*bin.*)
+  MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/
+  case "${PROCESSOR_ARCHITECTURE-}${PROCESSOR_ARCHITEW6432-}:$(uname -a)" in
+  *AMD64:CYGWIN* | *AMD64:MINGW*) distributionPlatform=windows-amd64 ;;
+  :Darwin*x86_64) distributionPlatform=darwin-amd64 ;;
+  :Darwin*arm64) distributionPlatform=darwin-aarch64 ;;
+  :Linux*x86_64*) distributionPlatform=linux-amd64 ;;
+  *)
+    echo "Cannot detect native platform for mvnd on $(uname)-$(uname -m), use pure java version" >&2
+    distributionPlatform=linux-amd64
+    ;;
+  esac
+  distributionUrl="${distributionUrl%-bin.*}-$distributionPlatform.zip"
+  ;;
+maven-mvnd-*) MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/ ;;
+*) MVN_CMD="mvn${scriptName#mvnw}" _MVNW_REPO_PATTERN=/org/apache/maven/ ;;
+esac
+
+# apply MVNW_REPOURL and calculate MAVEN_HOME
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+[ -z "${MVNW_REPOURL-}" ] || distributionUrl="$MVNW_REPOURL$_MVNW_REPO_PATTERN${distributionUrl#*"$_MVNW_REPO_PATTERN"}"
+distributionUrlName="${distributionUrl##*/}"
+distributionUrlNameMain="${distributionUrlName%.*}"
+distributionUrlNameMain="${distributionUrlNameMain%-bin}"
+MAVEN_USER_HOME="${MAVEN_USER_HOME:-${HOME}/.m2}"
+MAVEN_HOME="${MAVEN_USER_HOME}/wrapper/dists/${distributionUrlNameMain-}/$(hash_string "$distributionUrl")"
+
+exec_maven() {
+  unset MVNW_VERBOSE MVNW_USERNAME MVNW_PASSWORD MVNW_REPOURL || :
+  exec "$MAVEN_HOME/bin/$MVN_CMD" "$@" || die "cannot exec $MAVEN_HOME/bin/$MVN_CMD"
+}
+
+if [ -d "$MAVEN_HOME" ]; then
+  verbose "found existing MAVEN_HOME at $MAVEN_HOME"
+  exec_maven "$@"
+fi
+
+case "${distributionUrl-}" in
+*?-bin.zip | *?maven-mvnd-?*-?*.zip) ;;
+*) die "distributionUrl is not valid, must match *-bin.zip or maven-mvnd-*.zip, but found '${distributionUrl-}'" ;;
+esac
+
+# prepare tmp dir
+if TMP_DOWNLOAD_DIR="$(mktemp -d)" && [ -d "$TMP_DOWNLOAD_DIR" ]; then
+  clean() { rm -rf -- "$TMP_DOWNLOAD_DIR"; }
+  trap clean HUP INT TERM EXIT
+else
+  die "cannot create temp dir"
+fi
+
+mkdir -p -- "${MAVEN_HOME%/*}"
+
+# Download and Install Apache Maven
+verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
+verbose "Downloading from: $distributionUrl"
+verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
+
+# select .zip or .tar.gz
+if ! command -v unzip >/dev/null; then
+  distributionUrl="${distributionUrl%.zip}.tar.gz"
+  distributionUrlName="${distributionUrl##*/}"
+fi
+
+# verbose opt
+__MVNW_QUIET_WGET=--quiet __MVNW_QUIET_CURL=--silent __MVNW_QUIET_UNZIP=-q __MVNW_QUIET_TAR=''
+[ "${MVNW_VERBOSE-}" != true ] || __MVNW_QUIET_WGET='' __MVNW_QUIET_CURL='' __MVNW_QUIET_UNZIP='' __MVNW_QUIET_TAR=v
+
+# normalize http auth
+case "${MVNW_PASSWORD:+has-password}" in
+'') MVNW_USERNAME='' MVNW_PASSWORD='' ;;
+has-password) [ -n "${MVNW_USERNAME-}" ] || MVNW_USERNAME='' MVNW_PASSWORD='' ;;
+esac
+
+if [ -z "${MVNW_USERNAME-}" ] && command -v wget >/dev/null; then
+  verbose "Found wget ... using wget"
+  wget ${__MVNW_QUIET_WGET:+"$__MVNW_QUIET_WGET"} "$distributionUrl" -O "$TMP_DOWNLOAD_DIR/$distributionUrlName" || die "wget: Failed to fetch $distributionUrl"
+elif [ -z "${MVNW_USERNAME-}" ] && command -v curl >/dev/null; then
+  verbose "Found curl ... using curl"
+  curl ${__MVNW_QUIET_CURL:+"$__MVNW_QUIET_CURL"} -f -L -o "$TMP_DOWNLOAD_DIR/$distributionUrlName" "$distributionUrl" || die "curl: Failed to fetch $distributionUrl"
+elif set_java_home; then
+  verbose "Falling back to use Java to download"
+  javaSource="$TMP_DOWNLOAD_DIR/Downloader.java"
+  targetZip="$TMP_DOWNLOAD_DIR/$distributionUrlName"
+  cat >"$javaSource" <<-END
+	public class Downloader extends java.net.Authenticator
+	{
+	  protected java.net.PasswordAuthentication getPasswordAuthentication()
+	  {
+	    return new java.net.PasswordAuthentication( System.getenv( "MVNW_USERNAME" ), System.getenv( "MVNW_PASSWORD" ).toCharArray() );
+	  }
+	  public static void main( String[] args ) throws Exception
+	  {
+	    setDefault( new Downloader() );
+	    java.nio.file.Files.copy( java.net.URI.create( args[0] ).toURL().openStream(), java.nio.file.Paths.get( args[1] ).toAbsolutePath().normalize() );
+	  }
+	}
+	END
+  # For Cygwin/MinGW, switch paths to Windows format before running javac and java
+  verbose " - Compiling Downloader.java ..."
+  "$(native_path "$JAVACCMD")" "$(native_path "$javaSource")" || die "Failed to compile Downloader.java"
+  verbose " - Running Downloader.java ..."
+  "$(native_path "$JAVACMD")" -cp "$(native_path "$TMP_DOWNLOAD_DIR")" Downloader "$distributionUrl" "$(native_path "$targetZip")"
+fi
+
+# If specified, validate the SHA-256 sum of the Maven distribution zip file
+if [ -n "${distributionSha256Sum-}" ]; then
+  distributionSha256Result=false
+  if [ "$MVN_CMD" = mvnd.sh ]; then
+    echo "Checksum validation is not supported for maven-mvnd." >&2
+    echo "Please disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2
+    exit 1
+  elif command -v sha256sum >/dev/null; then
+    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | sha256sum -c - >/dev/null 2>&1; then
+      distributionSha256Result=true
+    fi
+  elif command -v shasum >/dev/null; then
+    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | shasum -a 256 -c >/dev/null 2>&1; then
+      distributionSha256Result=true
+    fi
+  else
+    echo "Checksum validation was requested but neither 'sha256sum' or 'shasum' are available." >&2
+    echo "Please install either command, or disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2
+    exit 1
+  fi
+  if [ $distributionSha256Result = false ]; then
+    echo "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised." >&2
+    echo "If you updated your Maven version, you need to update the specified distributionSha256Sum property." >&2
+    exit 1
+  fi
+fi
+
+# unzip and move
+if command -v unzip >/dev/null; then
+  unzip ${__MVNW_QUIET_UNZIP:+"$__MVNW_QUIET_UNZIP"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -d "$TMP_DOWNLOAD_DIR" || die "failed to unzip"
+else
+  tar xzf${__MVNW_QUIET_TAR:+"$__MVNW_QUIET_TAR"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -C "$TMP_DOWNLOAD_DIR" || die "failed to untar"
+fi
+
+# Find the actual extracted directory name (handles snapshots where filename != directory name)
+actualDistributionDir=""
+
+# First try the expected directory name (for regular distributions)
+if [ -d "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain" ]; then
+  if [ -f "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain/bin/$MVN_CMD" ]; then
+    actualDistributionDir="$distributionUrlNameMain"
+  fi
+fi
+
+# If not found, search for any directory with the Maven executable (for snapshots)
+if [ -z "$actualDistributionDir" ]; then
+  # enable globbing to iterate over items
+  set +f
+  for dir in "$TMP_DOWNLOAD_DIR"/*; do
+    if [ -d "$dir" ]; then
+      if [ -f "$dir/bin/$MVN_CMD" ]; then
+        actualDistributionDir="$(basename "$dir")"
+        break
+      fi
+    fi
+  done
+  set -f
+fi
+
+if [ -z "$actualDistributionDir" ]; then
+  verbose "Contents of $TMP_DOWNLOAD_DIR:"
+  verbose "$(ls -la "$TMP_DOWNLOAD_DIR")"
+  die "Could not find Maven distribution directory in extracted archive"
+fi
+
+verbose "Found extracted Maven distribution directory: $actualDistributionDir"
+printf %s\\n "$distributionUrl" >"$TMP_DOWNLOAD_DIR/$actualDistributionDir/mvnw.url"
+mv -- "$TMP_DOWNLOAD_DIR/$actualDistributionDir" "$MAVEN_HOME" || [ -d "$MAVEN_HOME" ] || die "fail to move MAVEN_HOME"
+
+clean || :
+exec_maven "$@"
+</file>
+
+<file path="mvnw.cmd">
+<# : batch portion
+@REM ----------------------------------------------------------------------------
+@REM Licensed to the Apache Software Foundation (ASF) under one
+@REM or more contributor license agreements.  See the NOTICE file
+@REM distributed with this work for additional information
+@REM regarding copyright ownership.  The ASF licenses this file
+@REM to you under the Apache License, Version 2.0 (the
+@REM "License"); you may not use this file except in compliance
+@REM with the License.  You may obtain a copy of the License at
+@REM
+@REM    http://www.apache.org/licenses/LICENSE-2.0
+@REM
+@REM Unless required by applicable law or agreed to in writing,
+@REM software distributed under the License is distributed on an
+@REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+@REM KIND, either express or implied.  See the License for the
+@REM specific language governing permissions and limitations
+@REM under the License.
+@REM ----------------------------------------------------------------------------
+
+@REM ----------------------------------------------------------------------------
+@REM Apache Maven Wrapper startup batch script, version 3.3.4
+@REM
+@REM Optional ENV vars
+@REM   MVNW_REPOURL - repo url base for downloading maven distribution
+@REM   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
+@REM   MVNW_VERBOSE - true: enable verbose log; others: silence the output
+@REM ----------------------------------------------------------------------------
+
+@IF "%__MVNW_ARG0_NAME__%"=="" (SET __MVNW_ARG0_NAME__=%~nx0)
+@SET __MVNW_CMD__=
+@SET __MVNW_ERROR__=
+@SET __MVNW_PSMODULEP_SAVE=%PSModulePath%
+@SET PSModulePath=
+@FOR /F "usebackq tokens=1* delims==" %%A IN (`powershell -noprofile "& {$scriptDir='%~dp0'; $script='%__MVNW_ARG0_NAME__%'; icm -ScriptBlock ([Scriptblock]::Create((Get-Content -Raw '%~f0'))) -NoNewScope}"`) DO @(
+  IF "%%A"=="MVN_CMD" (set __MVNW_CMD__=%%B) ELSE IF "%%B"=="" (echo %%A) ELSE (echo %%A=%%B)
+)
+@SET PSModulePath=%__MVNW_PSMODULEP_SAVE%
+@SET __MVNW_PSMODULEP_SAVE=
+@SET __MVNW_ARG0_NAME__=
+@SET MVNW_USERNAME=
+@SET MVNW_PASSWORD=
+@IF NOT "%__MVNW_CMD__%"=="" ("%__MVNW_CMD__%" %*)
+@echo Cannot start maven from wrapper >&2 && exit /b 1
+@GOTO :EOF
+: end batch / begin powershell #>
+
+$ErrorActionPreference = "Stop"
+if ($env:MVNW_VERBOSE -eq "true") {
+  $VerbosePreference = "Continue"
+}
+
+# calculate distributionUrl, requires .mvn/wrapper/maven-wrapper.properties
+$distributionUrl = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionUrl
+if (!$distributionUrl) {
+  Write-Error "cannot read distributionUrl property in $scriptDir/.mvn/wrapper/maven-wrapper.properties"
+}
+
+switch -wildcard -casesensitive ( $($distributionUrl -replace '^.*/','') ) {
+  "maven-mvnd-*" {
+    $USE_MVND = $true
+    $distributionUrl = $distributionUrl -replace '-bin\.[^.]*$',"-windows-amd64.zip"
+    $MVN_CMD = "mvnd.cmd"
+    break
+  }
+  default {
+    $USE_MVND = $false
+    $MVN_CMD = $script -replace '^mvnw','mvn'
+    break
+  }
+}
+
+# apply MVNW_REPOURL and calculate MAVEN_HOME
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+if ($env:MVNW_REPOURL) {
+  $MVNW_REPO_PATTERN = if ($USE_MVND -eq $False) { "/org/apache/maven/" } else { "/maven/mvnd/" }
+  $distributionUrl = "$env:MVNW_REPOURL$MVNW_REPO_PATTERN$($distributionUrl -replace "^.*$MVNW_REPO_PATTERN",'')"
+}
+$distributionUrlName = $distributionUrl -replace '^.*/',''
+$distributionUrlNameMain = $distributionUrlName -replace '\.[^.]*$','' -replace '-bin$',''
+
+$MAVEN_M2_PATH = "$HOME/.m2"
+if ($env:MAVEN_USER_HOME) {
+  $MAVEN_M2_PATH = "$env:MAVEN_USER_HOME"
+}
+
+if (-not (Test-Path -Path $MAVEN_M2_PATH)) {
+    New-Item -Path $MAVEN_M2_PATH -ItemType Directory | Out-Null
+}
+
+$MAVEN_WRAPPER_DISTS = $null
+if ((Get-Item $MAVEN_M2_PATH).Target[0] -eq $null) {
+  $MAVEN_WRAPPER_DISTS = "$MAVEN_M2_PATH/wrapper/dists"
+} else {
+  $MAVEN_WRAPPER_DISTS = (Get-Item $MAVEN_M2_PATH).Target[0] + "/wrapper/dists"
+}
+
+$MAVEN_HOME_PARENT = "$MAVEN_WRAPPER_DISTS/$distributionUrlNameMain"
+$MAVEN_HOME_NAME = ([System.Security.Cryptography.SHA256]::Create().ComputeHash([byte[]][char[]]$distributionUrl) | ForEach-Object {$_.ToString("x2")}) -join ''
+$MAVEN_HOME = "$MAVEN_HOME_PARENT/$MAVEN_HOME_NAME"
+
+if (Test-Path -Path "$MAVEN_HOME" -PathType Container) {
+  Write-Verbose "found existing MAVEN_HOME at $MAVEN_HOME"
+  Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"
+  exit $?
+}
+
+if (! $distributionUrlNameMain -or ($distributionUrlName -eq $distributionUrlNameMain)) {
+  Write-Error "distributionUrl is not valid, must end with *-bin.zip, but found $distributionUrl"
+}
+
+# prepare tmp dir
+$TMP_DOWNLOAD_DIR_HOLDER = New-TemporaryFile
+$TMP_DOWNLOAD_DIR = New-Item -Itemtype Directory -Path "$TMP_DOWNLOAD_DIR_HOLDER.dir"
+$TMP_DOWNLOAD_DIR_HOLDER.Delete() | Out-Null
+trap {
+  if ($TMP_DOWNLOAD_DIR.Exists) {
+    try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }
+    catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }
+  }
+}
+
+New-Item -Itemtype Directory -Path "$MAVEN_HOME_PARENT" -Force | Out-Null
+
+# Download and Install Apache Maven
+Write-Verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
+Write-Verbose "Downloading from: $distributionUrl"
+Write-Verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
+
+$webclient = New-Object System.Net.WebClient
+if ($env:MVNW_USERNAME -and $env:MVNW_PASSWORD) {
+  $webclient.Credentials = New-Object System.Net.NetworkCredential($env:MVNW_USERNAME, $env:MVNW_PASSWORD)
+}
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$webclient.DownloadFile($distributionUrl, "$TMP_DOWNLOAD_DIR/$distributionUrlName") | Out-Null
+
+# If specified, validate the SHA-256 sum of the Maven distribution zip file
+$distributionSha256Sum = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionSha256Sum
+if ($distributionSha256Sum) {
+  if ($USE_MVND) {
+    Write-Error "Checksum validation is not supported for maven-mvnd. `nPlease disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties."
+  }
+  Import-Module $PSHOME\Modules\Microsoft.PowerShell.Utility -Function Get-FileHash
+  if ((Get-FileHash "$TMP_DOWNLOAD_DIR/$distributionUrlName" -Algorithm SHA256).Hash.ToLower() -ne $distributionSha256Sum) {
+    Write-Error "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised. If you updated your Maven version, you need to update the specified distributionSha256Sum property."
+  }
+}
+
+# unzip and move
+Expand-Archive "$TMP_DOWNLOAD_DIR/$distributionUrlName" -DestinationPath "$TMP_DOWNLOAD_DIR" | Out-Null
+
+# Find the actual extracted directory name (handles snapshots where filename != directory name)
+$actualDistributionDir = ""
+
+# First try the expected directory name (for regular distributions)
+$expectedPath = Join-Path "$TMP_DOWNLOAD_DIR" "$distributionUrlNameMain"
+$expectedMvnPath = Join-Path "$expectedPath" "bin/$MVN_CMD"
+if ((Test-Path -Path $expectedPath -PathType Container) -and (Test-Path -Path $expectedMvnPath -PathType Leaf)) {
+  $actualDistributionDir = $distributionUrlNameMain
+}
+
+# If not found, search for any directory with the Maven executable (for snapshots)
+if (!$actualDistributionDir) {
+  Get-ChildItem -Path "$TMP_DOWNLOAD_DIR" -Directory | ForEach-Object {
+    $testPath = Join-Path $_.FullName "bin/$MVN_CMD"
+    if (Test-Path -Path $testPath -PathType Leaf) {
+      $actualDistributionDir = $_.Name
+    }
+  }
+}
+
+if (!$actualDistributionDir) {
+  Write-Error "Could not find Maven distribution directory in extracted archive"
+}
+
+Write-Verbose "Found extracted Maven distribution directory: $actualDistributionDir"
+Rename-Item -Path "$TMP_DOWNLOAD_DIR/$actualDistributionDir" -NewName $MAVEN_HOME_NAME | Out-Null
+try {
+  Move-Item -Path "$TMP_DOWNLOAD_DIR/$MAVEN_HOME_NAME" -Destination $MAVEN_HOME_PARENT | Out-Null
+} catch {
+  if (! (Test-Path -Path "$MAVEN_HOME" -PathType Container)) {
+    Write-Error "fail to move MAVEN_HOME"
+  }
+} finally {
+  try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }
+  catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }
+}
+
+Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"
+</file>
+
+<file path="pom.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>4.1.0</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.aleslul</groupId>
+	<artifactId>biblioteca</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name/>
+	<description/>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>26</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.13.0</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.13.0</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webmvc-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-compile</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<annotationProcessorPaths>
+								<path>
+									<groupId>org.projectlombok</groupId>
+									<artifactId>lombok</artifactId>
+								</path>
+							</annotationProcessorPaths>
+						</configuration>
+					</execution>
+					<execution>
+						<id>default-testCompile</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+						<configuration>
+							<annotationProcessorPaths>
+								<path>
+									<groupId>org.projectlombok</groupId>
+									<artifactId>lombok</artifactId>
+								</path>
+							</annotationProcessorPaths>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/BibliotecaApplication.java">
+package com.aleslul.biblioteca;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@SpringBootApplication
+@EnableScheduling
+public class BibliotecaApplication {
+	public static void main(String[] args) {
+		SpringApplication.run(BibliotecaApplication.class, args);
+	}
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/controller/AuthController.java">
+package com.aleslul.biblioteca.controller;
+
+import com.aleslul.biblioteca.dto.request.LoginRequestDTO;
+import com.aleslul.biblioteca.dto.response.LoginResponseDTO;
+import com.aleslul.biblioteca.exception.RecursoNoEncontradoException;
+import com.aleslul.biblioteca.model.Usuario;
+import com.aleslul.biblioteca.repository.UsuarioRepository;
+import com.aleslul.biblioteca.security.JwtService;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/auth")
+public class AuthController {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private JwtService jwtService;
+
+    // DS03 - RF-03: Autenticacion segura
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponseDTO> login(@Valid @RequestBody LoginRequestDTO requestDTO) {
+        // Si las credenciales son invalidas, esto lanza BadCredentialsException,
+        // que el GlobalExceptionHandler convierte en 401.
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(requestDTO.getCorreo(), requestDTO.getContrasena())
+        );
+
+        Usuario usuario = usuarioRepository.findByCorreo(requestDTO.getCorreo())
+                .orElseThrow(() -> new RecursoNoEncontradoException("Usuario no encontrado con correo: " + requestDTO.getCorreo()));
+
+        String token = jwtService.generarToken(usuario);
+
+        LoginResponseDTO response = new LoginResponseDTO(
+                token,
+                "Bearer",
+                usuario.getId(),
+                usuario.getNombre(),
+                usuario.getCorreo(),
+                usuario.getRol().getNombre().name()
+        );
+
+        return ResponseEntity.ok(response);
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/controller/DetallePrestamoController.java">
+package com.aleslul.biblioteca.controller;
+
+import com.aleslul.biblioteca.dto.response.DetallePrestamoResponseDTO;
+import com.aleslul.biblioteca.model.DetallePrestamo;
+import com.aleslul.biblioteca.service.DetallePrestamoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+//TODO: Esta clase podría no ser necesaria
+
+@RestController
+@RequestMapping("/api/prestamos/{idPrestamo}/detalles")
+public class DetallePrestamoController {
+
+    @Autowired
+    private DetallePrestamoService detallePrestamoService;
+
+    // GET /api/prestamos/{idPrestamo}/detalles
+    // Obtiene todos los libros asociados a un préstamo específico
+    @GetMapping
+    public ResponseEntity<List<DetallePrestamoResponseDTO>> obtenerDetallesPorPrestamo(@PathVariable int idPrestamo) {
+        List<DetallePrestamoResponseDTO> response = detallePrestamoService.obtenerDetallesPorPrestamo(idPrestamo)
+                .stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(response);
+    }
+
+    // GET /api/prestamos/{idPrestamo}/detalles/pendientes
+    // Obtiene únicamente los libros que el usuario aún no ha devuelto de ese préstamo
+    @GetMapping("/pendientes")
+    public ResponseEntity<List<DetallePrestamoResponseDTO>> obtenerPendientesPorPrestamo(@PathVariable int idPrestamo) {
+        List<DetallePrestamoResponseDTO> response = detallePrestamoService.obtenerPendientesPorPrestamo(idPrestamo)
+                .stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(response);
+    }
+
+    // Método helper para mapear la Entidad al Response DTO
+    private DetallePrestamoResponseDTO convertToDTO(DetallePrestamo detalle) {
+        DetallePrestamoResponseDTO dto = new DetallePrestamoResponseDTO();
+        dto.setIdDetalle(detalle.getId());
+        dto.setIdLibro(detalle.getLibro().getId());
+        dto.setTituloLibro(detalle.getLibro().getTitulo());
+        dto.setDevuelto(detalle.getDevuelto());
+        return dto;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/controller/DevolucionController.java">
+package com.aleslul.biblioteca.controller;
+
+import com.aleslul.biblioteca.dto.request.DevolucionRequestDTO;
+import com.aleslul.biblioteca.dto.response.DevolucionResponseDTO;
+import com.aleslul.biblioteca.model.Devolucion;
+import com.aleslul.biblioteca.service.DevolucionService;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/devoluciones")
+public class DevolucionController {
+
+    @Autowired
+    private DevolucionService devolucionService;
+
+    @PostMapping
+    public ResponseEntity<DevolucionResponseDTO> registrarDevolucion(@Valid @RequestBody DevolucionRequestDTO requestDTO) {
+        Devolucion devolucion = devolucionService.registrarDevolucion(requestDTO.getIdPrestamo());
+        return new ResponseEntity<>(convertToDTO(devolucion), HttpStatus.CREATED);
+    }
+
+    private DevolucionResponseDTO convertToDTO(Devolucion dev) {
+        DevolucionResponseDTO dto = new DevolucionResponseDTO();
+        dto.setId(dev.getId());
+        dto.setIdPrestamo(dev.getPrestamo().getId());
+        dto.setFechaDevolucion(dev.getFechaDevolucion());
+        dto.setDiasRetraso(dev.getDiasRetraso());
+        dto.setConMulta(dev.isConMulta());
+        return dto;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/controller/NotificacionController.java">
+package com.aleslul.biblioteca.controller;
+
+import com.aleslul.biblioteca.dto.response.NotificacionResponseDTO;
+import com.aleslul.biblioteca.service.NotificacionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/notificaciones")
+public class NotificacionController {
+
+    @Autowired
+    private NotificacionService notificacionService;
+
+    // RF10: GET /api/notificaciones?idUsuario={id}
+    @GetMapping
+    public ResponseEntity<List<NotificacionResponseDTO>> obtenerNotificaciones(@RequestParam int idUsuario) {
+        return ResponseEntity.ok(notificacionService.obtenerPorUsuario(idUsuario));
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/controller/PrestamoControlller.java">
+package com.aleslul.biblioteca.controller;
+
+import com.aleslul.biblioteca.dto.request.PrestamoRequestDTO;
+import com.aleslul.biblioteca.dto.response.PrestamoResponseDTO;
+import com.aleslul.biblioteca.service.PrestamoService;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/prestamos")
+public class PrestamoControlller {
+
+    @Autowired
+    private PrestamoService prestamoService;
+
+    @PostMapping
+    public ResponseEntity<PrestamoResponseDTO> registrarPrestamo(@Valid @RequestBody PrestamoRequestDTO requestDTO) {
+        PrestamoResponseDTO response = prestamoService.registrarPrestamo(requestDTO);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<PrestamoResponseDTO> obtenerPrestamoPorId(@PathVariable int id) {
+        PrestamoResponseDTO response = prestamoService.obtenerPorId(id);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<PrestamoResponseDTO>> obtenerTodosLosPrestamos() {
+        List<PrestamoResponseDTO> response = prestamoService.obtenerTodos();
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/usuario/{idUsuario}")
+    public ResponseEntity<List<PrestamoResponseDTO>> obtenerPrestamosPorUsuario(@PathVariable int idUsuario) {
+        List<PrestamoResponseDTO> response = prestamoService.obtenerPorUsuario(idUsuario);
+        return ResponseEntity.ok(response);
+    }
+
+    // DS07 - RF-07: Renovación autónoma de préstamos
+    @PutMapping("/{id}/renovar")
+    public ResponseEntity<PrestamoResponseDTO> renovarPrestamo(@PathVariable int id) {
+        PrestamoResponseDTO response = prestamoService.renovarPrestamo(id);
+        return ResponseEntity.ok(response);
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/controller/ReporteController.java">
+package com.aleslul.biblioteca.controller;
+
+import com.aleslul.biblioteca.dto.response.LibroMasSolicitadoResponseDTO;
+import com.aleslul.biblioteca.dto.response.ReporteCirculacionResponseDTO;
+import com.aleslul.biblioteca.service.ReporteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDate;
+import java.util.List;
+
+// RF9: reportes de circulación y libros más solicitados (prioridad Baja/Won't del backlog)
+@RestController
+@RequestMapping("/api/reportes")
+public class ReporteController {
+
+    @Autowired
+    private ReporteService reporteService;
+
+    // GET /api/reportes/circulacion?fechaInicio=2026-01-01&fechaFin=2026-06-30
+    // Sin parámetros = histórico completo
+    @GetMapping("/circulacion")
+    public ResponseEntity<ReporteCirculacionResponseDTO> obtenerReporteCirculacion(
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fechaInicio,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fechaFin) {
+        return ResponseEntity.ok(reporteService.generarReporteCirculacion(fechaInicio, fechaFin));
+    }
+
+    // GET /api/reportes/libros-mas-solicitados?limite=10
+    @GetMapping("/libros-mas-solicitados")
+    public ResponseEntity<List<LibroMasSolicitadoResponseDTO>> obtenerLibrosMasSolicitados(
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fechaInicio,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fechaFin,
+            @RequestParam(defaultValue = "10") int limite) {
+        return ResponseEntity.ok(reporteService.obtenerLibrosMasSolicitados(fechaInicio, fechaFin, limite));
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/controller/RolController.java">
+package com.aleslul.biblioteca.controller;
+
+import com.aleslul.biblioteca.dto.RolDTO;
+import com.aleslul.biblioteca.model.Rol;
+import com.aleslul.biblioteca.service.RolService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/api/roles")
+public class RolController {
+
+    @Autowired
+    private RolService rolService;
+
+    @GetMapping
+    public ResponseEntity<List<RolDTO>> listarRoles() {
+        List<RolDTO> rolesDto = rolService.obtenerTodos().stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(rolesDto);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<RolDTO> obtenerRolPorId(@PathVariable int id) {
+        Rol rol = rolService.obtenerPorId(id);
+        return ResponseEntity.ok(convertToDTO(rol));
+    }
+
+    private RolDTO convertToDTO(Rol rol) {
+        RolDTO dto = new RolDTO();
+        dto.setId(rol.getId());
+        dto.setNombre(rol.getNombre().name());
+        return dto;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/request/ActualizarRolRequestDTO.java">
+package com.aleslul.biblioteca.dto.request;
+
+import jakarta.validation.constraints.Positive;
+import lombok.Data;
+
+@Data
+public class ActualizarRolRequestDTO {
+
+    @Positive(message = "Debe especificar un rol válido")
+    private int idRol;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/request/DevolucionRequestDTO.java">
+package com.aleslul.biblioteca.dto.request;
+
+import jakarta.validation.constraints.Positive;
+import lombok.Data;
+
+@Data
+public class DevolucionRequestDTO {
+
+    @Positive(message = "Debe especificar un préstamo válido")
+    private int idPrestamo;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/request/LoginRequestDTO.java">
+package com.aleslul.biblioteca.dto.request;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+@Data
+public class LoginRequestDTO {
+
+    @NotBlank(message = "El correo es obligatorio")
+    private String correo;
+
+    @NotBlank(message = "La contraseña es obligatoria")
+    private String contrasena;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/request/PrestamoRequestDTO.java">
+package com.aleslul.biblioteca.dto.request;
+
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import lombok.Data;
+import java.time.LocalDate;
+import java.util.List;
+
+@Data
+public class PrestamoRequestDTO {
+
+    @Positive(message = "Debe especificar un usuario válido")
+    private int idUsuario;
+
+    @NotNull(message = "La fecha de vencimiento es obligatoria")
+    @Future(message = "La fecha de vencimiento debe ser posterior a hoy")
+    private LocalDate fechaVencimiento;
+
+    @NotEmpty(message = "Debe incluir al menos un libro en el préstamo")
+    private List<Integer> idLibros;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/request/ReservaRequestDTO.java">
+package com.aleslul.biblioteca.dto.request;
+
+import jakarta.validation.constraints.Positive;
+import lombok.Data;
+
+@Data
+public class ReservaRequestDTO {
+
+    @Positive(message = "Debe especificar un libro válido")
+    private int idLibro;
+
+    @Positive(message = "Debe especificar un usuario válido")
+    private int idUsuario;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/request/UsuarioActualizarRequestDTO.java">
+package com.aleslul.biblioteca.dto.request;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import lombok.Data;
+
+// RF pendiente: la maqueta edita nombre, correo, teléfono, DNI, status y rol
+// todos juntos en un solo formulario/submit (PUT /api/usuarios/{id})
+@Data
+public class UsuarioActualizarRequestDTO {
+
+    @NotBlank(message = "El nombre es obligatorio")
+    private String nombre;
+
+    @NotBlank(message = "El correo es obligatorio")
+    @Email(message = "El correo no tiene un formato válido")
+    private String correo;
+
+    @NotBlank(message = "El DNI es obligatorio")
+    private String dni;
+
+    private String telefono;
+
+    @Positive(message = "Debe especificar un rol válido")
+    private int idRol;
+
+    @NotNull(message = "El estado es obligatorio")
+    private String estado; // "ACTIVO" | "INACTIVO"
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/response/DetallePrestamoResponseDTO.java">
+package com.aleslul.biblioteca.dto.response;
+
+import lombok.Data;
+
+@Data
+public class DetallePrestamoResponseDTO {
+    private int idDetalle;
+    private int idLibro;
+    private String tituloLibro;
+    private boolean devuelto;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/response/DevolucionResponseDTO.java">
+package com.aleslul.biblioteca.dto.response;
+
+import lombok.Data;
+import java.time.LocalDateTime;
+
+@Data
+public class DevolucionResponseDTO {
+    private int id;
+    private int idPrestamo;
+    private LocalDateTime fechaDevolucion;
+    private int diasRetraso;
+    private boolean conMulta;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/response/ErrorResponseDTO.java">
+package com.aleslul.biblioteca.dto.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import java.time.LocalDateTime;
+
+@Data
+@AllArgsConstructor
+public class ErrorResponseDTO {
+    private LocalDateTime timestamp;
+    private int status;
+    private String error;
+    private String message;
+    private String path;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/response/LibroMasSolicitadoResponseDTO.java">
+package com.aleslul.biblioteca.dto.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class LibroMasSolicitadoResponseDTO {
+    private int idLibro;
+    private String titulo;
+    private String autor;
+    private long cantidadPrestamos;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/response/LoginResponseDTO.java">
+package com.aleslul.biblioteca.dto.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class LoginResponseDTO {
+    private String token;
+    private String tipo; // "Bearer"
+    private int idUsuario;
+    private String nombre;
+    private String correo;
+    private String rol;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/response/NotificacionResponseDTO.java">
+package com.aleslul.biblioteca.dto.response;
+
+import lombok.Data;
+import java.time.LocalDateTime;
+
+@Data
+public class NotificacionResponseDTO {
+    private int id;
+    private String tipo;
+    private String mensaje;
+    private LocalDateTime fechaCreacion;
+    private boolean leida;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/response/ReporteCirculacionResponseDTO.java">
+package com.aleslul.biblioteca.dto.response;
+
+import lombok.Data;
+import java.time.LocalDate;
+
+@Data
+public class ReporteCirculacionResponseDTO {
+    private LocalDate fechaInicio;   // null = sin límite inferior
+    private LocalDate fechaFin;      // null = sin límite superior
+    private long totalPrestamos;
+    private long prestamosActivos;
+    private long prestamosRenovados;
+    private long prestamosDevueltos;
+    private long prestamosVencidos;
+    private long totalDevoluciones;
+    private long devolucionesConMulta;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/response/ReservaResponseDTO.java">
+package com.aleslul.biblioteca.dto.response;
+
+import lombok.Data;
+import java.time.LocalDateTime;
+
+@Data
+public class ReservaResponseDTO {
+    private int id;
+    private int idLibro;
+    private String tituloLibro;
+    private int idUsuario;
+    private String nombreUsuario;
+    private LocalDateTime fechaReserva;
+    private String estado;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/RolDTO.java">
+package com.aleslul.biblioteca.dto;
+
+import lombok.Data;
+
+@Data
+public class RolDTO {
+    private int id;
+    private String nombre;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/exception/AccesoDenegadoException.java">
+package com.aleslul.biblioteca.exception;
+
+public class AccesoDenegadoException extends RuntimeException {
+    public AccesoDenegadoException(String mensaje) {
+        super(mensaje);
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/exception/RecursoDuplicadoException.java">
+package com.aleslul.biblioteca.exception;
+
+public class RecursoDuplicadoException extends RuntimeException {
+    public RecursoDuplicadoException(String mensaje) {
+        super(mensaje);
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/exception/RecursoNoEncontradoException.java">
+package com.aleslul.biblioteca.exception;
+
+public class RecursoNoEncontradoException extends RuntimeException {
+    public RecursoNoEncontradoException(String mensaje) {
+        super(mensaje);
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/exception/ReglaNegocioException.java">
+package com.aleslul.biblioteca.exception;
+
+public class ReglaNegocioException extends RuntimeException {
+    public ReglaNegocioException(String mensaje) {
+        super(mensaje);
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/DetallePrestamo.java">
+package com.aleslul.biblioteca.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Entity
+@Table(name = "detalle_prestamo")
+@Data
+public class DetallePrestamo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_detalle")
+    private Integer id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_prestamo", nullable = false)
+    private Prestamo prestamo;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_libro", nullable = false)
+    private Libro libro;
+    @Column(nullable = false)
+    private Boolean devuelto;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/Devolucion.java">
+package com.aleslul.biblioteca.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "devoluciones")
+@Data
+public class Devolucion {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_devolucion")
+    private Integer id;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_prestamo", nullable = false, unique = true)
+    private Prestamo prestamo;
+
+    @Column(name = "fecha_devolucion", nullable = false)
+    private LocalDateTime fechaDevolucion;
+
+    @Column(name = "dias_retraso", nullable = false)
+    private int diasRetraso;
+
+    @Column(name = "con_multa", nullable = false)
+    private boolean conMulta;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/enums/EstadoMulta.java">
+package com.aleslul.biblioteca.model.enums;
+
+public enum EstadoMulta {
+    PENDIENTE,
+    PAGADA,
+    CONDONADA
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/enums/EstadoPrestamo.java">
+package com.aleslul.biblioteca.model.enums;
+
+public enum EstadoPrestamo {
+    ACTIVO,
+    RENOVADO,
+    DEVUELTO,
+    VENCIDO
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/enums/EstadoUsuario.java">
+package com.aleslul.biblioteca.model.enums;
+
+public enum EstadoUsuario {
+    ACTIVO,
+    INACTIVO
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/enums/Severidad.java">
+package com.aleslul.biblioteca.model.enums;
+
+public enum Severidad {
+    INFO,
+    WARNING,
+    CRITICAL
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/enums/TipoAccion.java">
+package com.aleslul.biblioteca.model.enums;
+
+public enum TipoAccion {
+    REPORTE_CIRCULACION,
+    REPORTE_LIBROS_SOLICITADOS,
+    REPORTE_ESTADISTICAS,
+    NOTIFICACION_VENCIMIENTO,
+    NOTIFICACION_LIBRO_DISPONIBLE,
+    NOTIFICACION_MULTA_APLICADA,
+    RENOVACION_PRESTAMO,
+    REGISTRO_PRESTAMO
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/enums/TipoNotificacion.java">
+package com.aleslul.biblioteca.model.enums;
+
+public enum TipoNotificacion {
+    PRESTAMO_POR_VENCER,
+    LIBRO_DISPONIBLE
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/Multa.java">
+package com.aleslul.biblioteca.model;
+
+import com.aleslul.biblioteca.model.enums.EstadoMulta;
+import jakarta.persistence.*;
+import lombok.Data;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "multas")
+@Data
+public class Multa {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_multa")
+    private Integer id;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_devolucion", nullable = false, unique = true)
+    private Devolucion devolucion;
+
+    @Column(name = "monto_total", precision = 10, scale = 2, nullable = false)
+    private BigDecimal montoTotal;
+
+    @Column(name = "precio_libro", precision = 10, scale = 2, nullable = false)
+    private BigDecimal precioLibro;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20, nullable = false)
+    private EstadoMulta estado;
+
+    @Column(name = "fecha_calculo", nullable = false)
+    private LocalDate fechaCalculo;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/Notificacion.java">
+package com.aleslul.biblioteca.model;
+
+import com.aleslul.biblioteca.model.enums.TipoNotificacion;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+// RF10: notificación dirigida a un usuario. A diferencia de LogSistema (auditoría interna),
+// esta entidad representa mensajes que el usuario final debe poder consultar.
+@Entity
+@Table(name = "notificaciones")
+@Data
+public class Notificacion {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_usuario", nullable = false)
+    private Usuario usuario;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 30, nullable = false)
+    private TipoNotificacion tipo;
+
+    @Column(length = 500, nullable = false)
+    private String mensaje;
+
+    // id del préstamo o libro relacionado, según el tipo — permite evitar notificaciones duplicadas
+    @Column(name = "id_referencia", nullable = false)
+    private Integer idReferencia;
+
+    @Column(name = "fecha_creacion", nullable = false)
+    private LocalDateTime fechaCreacion;
+
+    @Column(nullable = false)
+    private boolean leida = false;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/Prestamo.java">
+package com.aleslul.biblioteca.model;
+
+import com.aleslul.biblioteca.model.enums.EstadoPrestamo;
+import jakarta.persistence.*;
+import lombok.Data;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "prestamos")
+@Data
+public class Prestamo {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_prestamo")
+    private Integer id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_usuario", nullable = false)
+    private Usuario usuario;
+
+    @Column(name = "fecha_prestamo", nullable = false)
+    private LocalDateTime fechaPrestamo;
+
+    @Column(name = "fecha_vencimiento", nullable = false)
+    private LocalDateTime fechaVencimiento;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20, nullable = false)
+    private EstadoPrestamo estado;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/Reserva.java">
+package com.aleslul.biblioteca.model;
+
+import com.aleslul.biblioteca.model.enums.EstadoReserva;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+// Entidad propuesta para soportar RF7 (renovación) y RF10 (notificaciones),
+// ya que el diagrama de clases del informe RUP no la incluía.
+@Entity
+@Table(name = "reservas")
+@Data
+public class Reserva {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_reserva")
+    private Integer id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_libro", nullable = false)
+    private Libro libro;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_usuario", nullable = false)
+    private Usuario usuario;
+
+    @Column(name = "fecha_reserva", nullable = false)
+    private LocalDateTime fechaReserva;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20, nullable = false)
+    private EstadoReserva estado;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/repository/DevolucionRepository.java">
+package com.aleslul.biblioteca.repository;
+
+import com.aleslul.biblioteca.model.Devolucion;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import java.time.LocalDateTime;
+
+@Repository
+public interface DevolucionRepository extends JpaRepository<Devolucion, Integer> {
+
+    // RF9: total de devoluciones en un período
+    @Query("SELECT COUNT(d) FROM Devolucion d WHERE " +
+            "(:desde IS NULL OR d.fechaDevolucion >= :desde) AND " +
+            "(:hasta IS NULL OR d.fechaDevolucion <= :hasta)")
+    long contarDevoluciones(@Param("desde") LocalDateTime desde, @Param("hasta") LocalDateTime hasta);
+
+    // RF9: devoluciones que generaron multa en un período
+    @Query("SELECT COUNT(d) FROM Devolucion d WHERE d.conMulta = true AND " +
+            "(:desde IS NULL OR d.fechaDevolucion >= :desde) AND " +
+            "(:hasta IS NULL OR d.fechaDevolucion <= :hasta)")
+    long contarDevolucionesConMulta(@Param("desde") LocalDateTime desde, @Param("hasta") LocalDateTime hasta);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/repository/LogSistemaRepository.java">
+package com.aleslul.biblioteca.repository;
+
+import com.aleslul.biblioteca.model.LogSistema;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+
+@Repository
+public interface LogSistemaRepository extends JpaRepository<LogSistema, Integer> {
+
+    // Para auditar las acciones realizadas por un usuario específico
+    List<LogSistema> findByUsuarioId(int idUsuario);
+
+    // Para listar los logs del sistema ordenados del más reciente al más antiguo
+    List<LogSistema> findAllByOrderByFechaRegistroDesc();
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/repository/NotificacionRepository.java">
+package com.aleslul.biblioteca.repository;
+
+import com.aleslul.biblioteca.model.Notificacion;
+import com.aleslul.biblioteca.model.enums.TipoNotificacion;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface NotificacionRepository extends JpaRepository<Notificacion, Integer> {
+
+    List<Notificacion> findByUsuarioIdOrderByFechaCreacionDesc(int idUsuario);
+
+    // Evita que el scheduler duplique la misma notificación en corridas sucesivas
+    boolean existsByUsuarioIdAndTipoAndIdReferencia(int idUsuario, TipoNotificacion tipo, int idReferencia);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/repository/PrestamoRepository.java">
+package com.aleslul.biblioteca.repository;
+
+import com.aleslul.biblioteca.model.Prestamo;
+import com.aleslul.biblioteca.model.enums.EstadoPrestamo;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Repository
+public interface PrestamoRepository extends JpaRepository<Prestamo, Integer> {
+
+    // Método útil para buscar todos los préstamos de un usuario específico
+    List<Prestamo> findByUsuarioId(int idUsuario);
+
+    // Método útil para buscar préstamos por su estado (por ejemplo, VENCIDO o ACTIVO)
+    List<Prestamo> findByEstado(EstadoPrestamo estado);
+
+    // RF10: préstamos vigentes cuyo vencimiento cae dentro de una ventana (para notificar)
+    List<Prestamo> findByEstadoInAndFechaVencimientoBetween(
+            List<EstadoPrestamo> estados, LocalDateTime desde, LocalDateTime hasta);
+
+    // RF9: total de préstamos en un período (o histórico completo si desde/hasta son null)
+    @Query("SELECT COUNT(p) FROM Prestamo p WHERE " +
+            "(:desde IS NULL OR p.fechaPrestamo >= :desde) AND " +
+            "(:hasta IS NULL OR p.fechaPrestamo <= :hasta)")
+    long contarPrestamos(@Param("desde") LocalDateTime desde, @Param("hasta") LocalDateTime hasta);
+
+    // RF9: total de préstamos por estado en un período
+    @Query("SELECT COUNT(p) FROM Prestamo p WHERE p.estado = :estado AND " +
+            "(:desde IS NULL OR p.fechaPrestamo >= :desde) AND " +
+            "(:hasta IS NULL OR p.fechaPrestamo <= :hasta)")
+    long contarPrestamosPorEstado(@Param("estado") EstadoPrestamo estado,
+                                  @Param("desde") LocalDateTime desde, @Param("hasta") LocalDateTime hasta);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/repository/RolRepository.java">
+package com.aleslul.biblioteca.repository;
+
+import com.aleslul.biblioteca.model.Rol;
+import com.aleslul.biblioteca.model.enums.NombreRol;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.Optional;
+
+@Repository
+public interface RolRepository extends JpaRepository<Rol, Integer> {
+    // Por si necesitas buscar un rol directamente por su enum
+    Optional<Rol> findByNombre(NombreRol nombre);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/security/JwtService.java">
+package com.aleslul.biblioteca.security;
+
+import com.aleslul.biblioteca.model.Usuario;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
+
+import javax.crypto.SecretKey;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+
+@Service
+public class JwtService {
+
+    @Value("${jwt.secret}")
+    private String jwtSecretBase64;
+
+    @Value("${jwt.expiration-ms}")
+    private long jwtExpirationMs;
+
+    private SecretKey getSigningKey() {
+        byte[] keyBytes = Decoders.BASE64.decode(jwtSecretBase64);
+        return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    public String generarToken(Usuario usuario) {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("idUsuario", usuario.getId());
+        claims.put("nombre", usuario.getNombre());
+        claims.put("rol", usuario.getRol().getNombre().name());
+
+        Date ahora = new Date();
+        Date expiracion = new Date(ahora.getTime() + jwtExpirationMs);
+
+        return Jwts.builder()
+                .claims(claims)
+                .subject(usuario.getCorreo())
+                .issuedAt(ahora)
+                .expiration(expiracion)
+                .signWith(getSigningKey())
+                .compact();
+    }
+
+    public String extraerCorreo(String token) {
+        return extraerClaim(token, Claims::getSubject);
+    }
+
+    public <T> T extraerClaim(String token, Function<Claims, T> claimsResolver) {
+        Claims claims = extraerTodosLosClaims(token);
+        return claimsResolver.apply(claims);
+    }
+
+    private Claims extraerTodosLosClaims(String token) {
+        return Jwts.parser()
+                .verifyWith(getSigningKey())
+                .build()
+                .parseSignedClaims(token)
+                .getPayload();
+    }
+
+    public boolean esTokenValido(String token, UserDetails userDetails) {
+        String correo = extraerCorreo(token);
+        return correo.equals(userDetails.getUsername()) && !esTokenExpirado(token);
+    }
+
+    private boolean esTokenExpirado(String token) {
+        Date expiracion = extraerClaim(token, Claims::getExpiration);
+        return expiracion.before(new Date());
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/security/UsuarioAutenticadoHelper.java">
+package com.aleslul.biblioteca.security;
+
+import com.aleslul.biblioteca.exception.RecursoNoEncontradoException;
+import com.aleslul.biblioteca.model.Usuario;
+import com.aleslul.biblioteca.repository.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
+
+// Helper reusable: obtiene el Usuario autenticado actual a partir del correo
+// que Spring Security guarda como "username" del JWT (ver CustomUserDetailsService).
+// Pensado para cualquier service que necesite saber "quién" hizo la petición,
+// no solo "sobre quién" es la acción (por ejemplo, para auditoría en LogSistema).
+
+@Component
+public class UsuarioAutenticadoHelper {
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    public Usuario obtenerUsuarioActual() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        // No debería pasar en un endpoint protegido por SecurityConfig, pero se valida por seguridad.
+        if (authentication == null || !authentication.isAuthenticated()) {
+            throw new IllegalStateException("No hay un usuario autenticado en el contexto de seguridad actual");
+        }
+
+        String correo = authentication.getName();
+        return usuarioRepository.findByCorreo(correo)
+                .orElseThrow(() -> new RecursoNoEncontradoException(
+                        "Usuario autenticado no encontrado con correo: " + correo));
+    }
+
+    public int obtenerIdUsuarioActual() {
+        return obtenerUsuarioActual().getId();
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/DetallePrestamoService.java">
+package com.aleslul.biblioteca.service;
+
+import com.aleslul.biblioteca.model.DetallePrestamo;
+import java.util.List;
+
+public interface DetallePrestamoService {
+    List<DetallePrestamo> obtenerDetallesPorPrestamo(int idPrestamo);
+    List<DetallePrestamo> obtenerPendientesPorPrestamo(int idPrestamo);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/DevolucionService.java">
+package com.aleslul.biblioteca.service;
+
+import com.aleslul.biblioteca.model.Devolucion;
+
+public interface DevolucionService {
+    Devolucion registrarDevolucion(int idPrestamo);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/impl/DetallePrestamoServiceImpl.java">
+package com.aleslul.biblioteca.service.impl;
+
+import com.aleslul.biblioteca.model.DetallePrestamo;
+import com.aleslul.biblioteca.repository.DetallePrestamoRepository;
+import com.aleslul.biblioteca.service.DetallePrestamoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
+public class DetallePrestamoServiceImpl implements DetallePrestamoService {
+
+    @Autowired
+    private DetallePrestamoRepository detallePrestamoRepository;
+
+    @Override
+    public List<DetallePrestamo> obtenerDetallesPorPrestamo(int idPrestamo) {
+        return detallePrestamoRepository.findByPrestamoId(idPrestamo);
+    }
+
+    @Override
+    public List<DetallePrestamo> obtenerPendientesPorPrestamo(int idPrestamo) {
+        return detallePrestamoRepository.findByPrestamoIdAndDevueltoFalse(idPrestamo);
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/impl/NotificacionServiceImpl.java">
+package com.aleslul.biblioteca.service.impl;
+
+import com.aleslul.biblioteca.dto.response.NotificacionResponseDTO;
+import com.aleslul.biblioteca.exception.RecursoNoEncontradoException;
+import com.aleslul.biblioteca.model.Notificacion;
+import com.aleslul.biblioteca.model.Usuario;
+import com.aleslul.biblioteca.model.enums.TipoNotificacion;
+import com.aleslul.biblioteca.repository.NotificacionRepository;
+import com.aleslul.biblioteca.repository.UsuarioRepository;
+import com.aleslul.biblioteca.service.NotificacionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class NotificacionServiceImpl implements NotificacionService {
+
+    @Autowired
+    private NotificacionRepository notificacionRepository;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    @Override
+    public List<NotificacionResponseDTO> obtenerPorUsuario(int idUsuario) {
+        return notificacionRepository.findByUsuarioIdOrderByFechaCreacionDesc(idUsuario).stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void crearSiNoExiste(int idUsuario, TipoNotificacion tipo, String mensaje, int idReferencia) {
+        if (notificacionRepository.existsByUsuarioIdAndTipoAndIdReferencia(idUsuario, tipo, idReferencia)) {
+            return; // Ya se notificó antes; no duplicar (RF10).
+        }
+
+        Usuario usuario = usuarioRepository.findById(idUsuario)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Usuario no encontrado con ID: " + idUsuario));
+
+        Notificacion notificacion = new Notificacion();
+        notificacion.setUsuario(usuario);
+        notificacion.setTipo(tipo);
+        notificacion.setMensaje(mensaje);
+        notificacion.setIdReferencia(idReferencia);
+        notificacion.setFechaCreacion(LocalDateTime.now());
+        notificacion.setLeida(false);
+
+        notificacionRepository.save(notificacion);
+    }
+
+    private NotificacionResponseDTO convertToDTO(Notificacion n) {
+        NotificacionResponseDTO dto = new NotificacionResponseDTO();
+        dto.setId(n.getId());
+        dto.setTipo(n.getTipo().name());
+        dto.setMensaje(n.getMensaje());
+        dto.setFechaCreacion(n.getFechaCreacion());
+        dto.setLeida(n.isLeida());
+        return dto;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/impl/ReporteServiceImpl.java">
+package com.aleslul.biblioteca.service.impl;
+
+import com.aleslul.biblioteca.dto.response.LibroMasSolicitadoResponseDTO;
+import com.aleslul.biblioteca.dto.response.ReporteCirculacionResponseDTO;
+import com.aleslul.biblioteca.model.enums.EstadoPrestamo;
+import com.aleslul.biblioteca.repository.DetallePrestamoRepository;
+import com.aleslul.biblioteca.repository.DevolucionRepository;
+
+import com.aleslul.biblioteca.model.enums.TipoAccion;
+import com.aleslul.biblioteca.repository.PrestamoRepository;
+import com.aleslul.biblioteca.security.UsuarioAutenticadoHelper;
+import com.aleslul.biblioteca.service.LogSistemaService;
+import com.aleslul.biblioteca.service.ReporteService;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.List;
+
+@Service
+public class ReporteServiceImpl implements ReporteService {
+    @Autowired
+    private DetallePrestamoRepository detallePrestamoRepository;
+
+    @Autowired
+    private LogSistemaService logSistemaService;
+
+    @Autowired
+    private UsuarioAutenticadoHelper usuarioAutenticadoHelper;
+
+    @Autowired
+    private PrestamoRepository prestamoRepository;
+
+    @Autowired
+    private DevolucionRepository devolucionRepository;
+
+    @Override
+    public ReporteCirculacionResponseDTO generarReporteCirculacion(LocalDate fechaInicio, LocalDate fechaFin) {
+        LocalDateTime desde = fechaInicio != null ? fechaInicio.atStartOfDay() : null;
+        LocalDateTime hasta = fechaFin != null ? fechaFin.atTime(LocalTime.MAX) : null;
+
+        ReporteCirculacionResponseDTO reporte = new ReporteCirculacionResponseDTO();
+        reporte.setFechaInicio(fechaInicio);
+        reporte.setFechaFin(fechaFin);
+
+        reporte.setTotalPrestamos(prestamoRepository.contarPrestamos(desde, hasta));
+        reporte.setPrestamosActivos(prestamoRepository.contarPrestamosPorEstado(EstadoPrestamo.ACTIVO, desde, hasta));
+        reporte.setPrestamosRenovados(prestamoRepository.contarPrestamosPorEstado(EstadoPrestamo.RENOVADO, desde, hasta));
+        reporte.setPrestamosDevueltos(prestamoRepository.contarPrestamosPorEstado(EstadoPrestamo.DEVUELTO, desde, hasta));
+        reporte.setPrestamosVencidos(prestamoRepository.contarPrestamosPorEstado(EstadoPrestamo.VENCIDO, desde, hasta));
+
+        reporte.setTotalDevoluciones(devolucionRepository.contarDevoluciones(desde, hasta));
+        reporte.setDevolucionesConMulta(devolucionRepository.contarDevolucionesConMulta(desde, hasta));
+
+        logSistemaService.registrarAccion(
+                usuarioAutenticadoHelper.obtenerIdUsuarioActual(),
+                TipoAccion.REPORTE_CIRCULACION,
+                "Reporte de circulación generado" + (fechaInicio != null || fechaFin != null
+                        ? " (" + fechaInicio + " a " + fechaFin + ")" : " (histórico completo)"));
+
+        return reporte;
+    }
+
+    @Override
+    public List<LibroMasSolicitadoResponseDTO> obtenerLibrosMasSolicitados(LocalDate fechaInicio, LocalDate fechaFin, int limite) {
+        LocalDateTime desde = fechaInicio != null ? fechaInicio.atStartOfDay() : null;
+        LocalDateTime hasta = fechaFin != null ? fechaFin.atTime(LocalTime.MAX) : null;
+
+        int limiteEfectivo = limite > 0 ? limite : 10;
+        Pageable pageable = PageRequest.of(0, limiteEfectivo);
+
+        List<LibroMasSolicitadoResponseDTO> resultado =
+                detallePrestamoRepository.obtenerLibrosMasSolicitados(desde, hasta, pageable);
+
+        logSistemaService.registrarAccion(
+                usuarioAutenticadoHelper.obtenerIdUsuarioActual(),
+                TipoAccion.REPORTE_LIBROS_SOLICITADOS,
+                "Reporte de libros más solicitados generado (top " + limiteEfectivo + ")");
+
+        return resultado;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/impl/RolServiceImpl.java">
+package com.aleslul.biblioteca.service.impl;
+
+import com.aleslul.biblioteca.exception.RecursoNoEncontradoException;
+import com.aleslul.biblioteca.model.Rol;
+import com.aleslul.biblioteca.repository.RolRepository;
+import com.aleslul.biblioteca.service.RolService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
+public class RolServiceImpl implements RolService {
+
+    @Autowired
+    private RolRepository rolRepository;
+
+    @Override
+    public List<Rol> obtenerTodos() {
+        return rolRepository.findAll();
+    }
+
+    @Override
+    public Rol obtenerPorId(int id) {
+        return rolRepository.findById(id)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Rol no encontrado con ID: " + id)); // Reemplazado[cite: 2]
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/LogSistemaService.java">
+package com.aleslul.biblioteca.service;
+
+import com.aleslul.biblioteca.model.LogSistema;
+import com.aleslul.biblioteca.model.enums.TipoAccion;
+import java.util.List;
+
+public interface LogSistemaService {
+    // Método principal para registrar cualquier evento en el sistema
+    void registrarAccion(int idUsuario, TipoAccion tipoAccion, String descripcion);
+
+    List<LogSistema> obtenerTodosLosLogs();
+    List<LogSistema> obtenerLogsPorUsuario(int idUsuario);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/NotificacionService.java">
+package com.aleslul.biblioteca.service;
+
+import com.aleslul.biblioteca.dto.response.NotificacionResponseDTO;
+import com.aleslul.biblioteca.model.enums.TipoNotificacion;
+
+import java.util.List;
+
+public interface NotificacionService {
+    List<NotificacionResponseDTO> obtenerPorUsuario(int idUsuario);
+
+    // Usado por el scheduler (RF10): crea la notificación solo si no existe ya una igual
+    void crearSiNoExiste(int idUsuario, TipoNotificacion tipo, String mensaje, int idReferencia);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/PrestamoService.java">
+package com.aleslul.biblioteca.service;
+
+import com.aleslul.biblioteca.dto.request.PrestamoRequestDTO;
+import com.aleslul.biblioteca.dto.response.PrestamoResponseDTO;
+import java.util.List;
+
+public interface PrestamoService {
+    PrestamoResponseDTO registrarPrestamo(PrestamoRequestDTO requestDTO);
+    PrestamoResponseDTO obtenerPorId(int id);
+    List<PrestamoResponseDTO> obtenerTodos();
+    List<PrestamoResponseDTO> obtenerPorUsuario(int idUsuario);
+    // DS07 - RF-07: Renovación autónoma de préstamos
+    PrestamoResponseDTO renovarPrestamo(int idPrestamo);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/ReporteService.java">
+package com.aleslul.biblioteca.service;
+
+import com.aleslul.biblioteca.dto.response.LibroMasSolicitadoResponseDTO;
+import com.aleslul.biblioteca.dto.response.ReporteCirculacionResponseDTO;
+
+import java.time.LocalDate;
+import java.util.List;
+
+public interface ReporteService {
+    // RF9: fechaInicio/fechaFin nulos = histórico completo, sin acotar
+    ReporteCirculacionResponseDTO generarReporteCirculacion(LocalDate fechaInicio, LocalDate fechaFin);
+
+    List<LibroMasSolicitadoResponseDTO> obtenerLibrosMasSolicitados(LocalDate fechaInicio, LocalDate fechaFin, int limite);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/RolService.java">
+package com.aleslul.biblioteca.service;
+
+import com.aleslul.biblioteca.model.Rol;
+import java.util.List;
+
+public interface RolService {
+    List<Rol> obtenerTodos();
+    Rol obtenerPorId(int id);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/validation/CorreoInstitucional.java">
+package com.aleslul.biblioteca.validation;
+
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
+
+import java.lang.annotation.*;
+
+/**
+ * Valida que un correo pertenezca al dominio institucional configurado
+ * en application.properties (app.correo.dominio-institucional).
+ * Requerido explícitamente por RF1 / HU01 en el informe RUP.
+ */
+@Documented
+@Constraint(validatedBy = CorreoInstitucionalValidator.class)
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface CorreoInstitucional {
+    String message() default "El correo debe pertenecer al dominio institucional";
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/validation/CorreoInstitucionalValidator.java">
+package com.aleslul.biblioteca.validation;
+
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class CorreoInstitucionalValidator implements ConstraintValidator<CorreoInstitucional, String> {
+
+    // Dominio institucional configurable sin tocar código (ver application.properties).
+    // NOTA: se asumió "@uss.edu.pe" como dominio de la USS; ajustar si el informe RUP
+    // especifica otro (ej. correo de alumno vs. correo institucional docente/admin).
+    @Value("${app.correo.dominio-institucional}")
+    private String dominioInstitucional;
+
+    @Override
+    public boolean isValid(String correo, ConstraintValidatorContext context) {
+        // Null/blank lo maneja @NotBlank; aquí solo validamos el dominio si hay valor.
+        if (correo == null || correo.isBlank()) {
+            return true;
+        }
+        return correo.trim().toLowerCase().endsWith(dominioInstitucional.toLowerCase());
+    }
+}
+</file>
+
+<file path="src/test/java/com/aleslul/biblioteca/BibliotecaApplicationTests.java">
+package com.aleslul.biblioteca;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class BibliotecaApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+</file>
+
+<file path="README.md">
+# Backend- Sistema de Gestion Bibliotecaria
+Hecho por: Alessandro Becerra Montenegro
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/controller/LibroController.java">
+package com.aleslul.biblioteca.controller;
+
+import com.aleslul.biblioteca.dto.request.LibroRequestDTO;
+import com.aleslul.biblioteca.dto.response.LibroResponseDTO;
+import com.aleslul.biblioteca.model.Libro;
+import com.aleslul.biblioteca.service.LibroService;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/api/libros")
+public class LibroController {
+
+    @Autowired
+    private LibroService libroService;
+
+    @PostMapping
+    public ResponseEntity<LibroResponseDTO> registrarLibro(@Valid @RequestBody LibroRequestDTO requestDTO) {
+        Libro libro = new Libro();
+        libro.setTitulo(requestDTO.getTitulo());
+        libro.setAutor(requestDTO.getAutor());
+        libro.setIsbn(requestDTO.getIsbn());
+        libro.setCategoria(requestDTO.getCategoria());
+        libro.setPrecio(requestDTO.getPrecio());
+        libro.setAnioPublicacion(requestDTO.getAnioPublicacion());
+        libro.setUbicacion(requestDTO.getUbicacion());
+        libro.setDescripcion(requestDTO.getDescripcion());
+        libro.setUrlPortada(requestDTO.getUrlPortada());
+        libro.setCopiesTotal(requestDTO.getCopiesTotal());
+        libro.setCopiesAvailable(requestDTO.getCopiesTotal());
+
+        Libro libroGuardado = libroService.guardarLibro(libro);
+        return new ResponseEntity<>(convertToDTO(libroGuardado), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<LibroResponseDTO> obtenerLibroPorId(@PathVariable int id) {
+        Libro libro = libroService.obtenerPorId(id);
+        return ResponseEntity.ok(convertToDTO(libro));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<LibroResponseDTO>> listarLibros(
+            @RequestParam(required = false) String titulo,
+            @RequestParam(required = false) String autor,
+            @RequestParam(required = false) String isbn,
+            @RequestParam(required = false) String categoria) {
+
+        List<Libro> libros;
+        if (titulo == null && autor == null && isbn == null && categoria == null) {
+            libros = libroService.listarTodos();
+        } else {
+            libros = libroService.buscarLibros(titulo, autor, isbn, categoria);
+        }
+
+        List<LibroResponseDTO> response = libros.stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<LibroResponseDTO> actualizarLibro(@PathVariable int id, @Valid @RequestBody LibroRequestDTO requestDTO) {
+        Libro datosActualizados = new Libro();
+        datosActualizados.setTitulo(requestDTO.getTitulo());
+        datosActualizados.setAutor(requestDTO.getAutor());
+        datosActualizados.setIsbn(requestDTO.getIsbn());
+        datosActualizados.setCategoria(requestDTO.getCategoria());
+        datosActualizados.setPrecio(requestDTO.getPrecio());
+        datosActualizados.setAnioPublicacion(requestDTO.getAnioPublicacion());
+        datosActualizados.setUbicacion(requestDTO.getUbicacion());
+        datosActualizados.setDescripcion(requestDTO.getDescripcion());
+        datosActualizados.setUrlPortada(requestDTO.getUrlPortada());
+        datosActualizados.setCopiesTotal(requestDTO.getCopiesTotal());
+
+        Libro libroActualizado = libroService.actualizarLibro(id, datosActualizados);
+        return ResponseEntity.ok(convertToDTO(libroActualizado));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminarLibro(@PathVariable int id) {
+        libroService.eliminarLibro(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    private LibroResponseDTO convertToDTO(Libro libro) {
+        LibroResponseDTO dto = new LibroResponseDTO();
+        dto.setId(libro.getId());
+        dto.setTitulo(libro.getTitulo());
+        dto.setAutor(libro.getAutor());
+        dto.setIsbn(libro.getIsbn());
+        dto.setCategoria(libro.getCategoria());
+        dto.setPrecio(libro.getPrecio());
+        dto.setAnioPublicacion(libro.getAnioPublicacion());
+        dto.setUbicacion(libro.getUbicacion());
+        dto.setDescripcion(libro.getDescripcion());
+        dto.setUrlPortada(libro.getUrlPortada());
+        dto.setCopiesTotal(libro.getCopiesTotal());
+        dto.setCopiesAvailable(libro.getCopiesAvailable());
+        dto.setDisponible(libro.isDisponible());
+        return dto;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/controller/LogSistemaController.java">
+package com.aleslul.biblioteca.controller;
+
+import com.aleslul.biblioteca.dto.response.LogSistemaResponseDTO;
+import com.aleslul.biblioteca.model.LogSistema;
+import com.aleslul.biblioteca.service.LogSistemaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/api/logs")
+public class LogSistemaController {
+
+    @Autowired
+    private LogSistemaService logSistemaService;
+
+    @GetMapping
+    public ResponseEntity<List<LogSistemaResponseDTO>> obtenerTodosLosLogs() {
+        List<LogSistemaResponseDTO> logsDto = logSistemaService.obtenerTodosLosLogs().stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(logsDto);
+    }
+
+    @GetMapping("/usuario/{idUsuario}")
+    public ResponseEntity<List<LogSistemaResponseDTO>> obtenerLogsPorUsuario(@PathVariable int idUsuario) {
+        List<LogSistemaResponseDTO> logsDto = logSistemaService.obtenerLogsPorUsuario(idUsuario).stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(logsDto);
+    }
+
+    private LogSistemaResponseDTO convertToDTO(LogSistema log) {
+        LogSistemaResponseDTO dto = new LogSistemaResponseDTO();
+        dto.setId(log.getId());
+        dto.setIdUsuario(log.getUsuario().getId());
+        dto.setNombreUsuario(log.getUsuario().getNombre());
+        dto.setTipoAccion(log.getTipoAccion().name());
+        dto.setSeveridad(log.getSeveridad() != null ? log.getSeveridad().name() : null);
+        dto.setDescripccion(log.getDescripccion()); // Mapeado exactamente al atributo de tu modelo
+        dto.setFechaRegistro(log.getFechaRegistro());
+        return dto;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/controller/MultaController.java">
+package com.aleslul.biblioteca.controller;
+
+import com.aleslul.biblioteca.dto.response.MultaResponseDTO;
+import com.aleslul.biblioteca.model.Devolucion;
+import com.aleslul.biblioteca.model.Multa;
+import com.aleslul.biblioteca.model.Prestamo;
+import com.aleslul.biblioteca.repository.DetallePrestamoRepository;
+import com.aleslul.biblioteca.service.MultaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/api/multas")
+public class MultaController {
+
+    @Autowired
+    private MultaService multaService;
+
+    @Autowired
+    private DetallePrestamoRepository detallePrestamoRepository;
+
+    // RF pendiente: el frontend necesita listar todas las multas (antes no existía este endpoint)
+    @GetMapping
+    public ResponseEntity<List<MultaResponseDTO>> obtenerTodasLasMultas() {
+        List<MultaResponseDTO> response = multaService.obtenerTodas().stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(response);
+    }
+
+    // RF pendiente: para que un estudiante consulte solo sus propias multas
+    @GetMapping("/usuario/{idUsuario}")
+    public ResponseEntity<List<MultaResponseDTO>> obtenerMultasPorUsuario(@PathVariable int idUsuario) {
+        List<MultaResponseDTO> response = multaService.obtenerPorUsuario(idUsuario).stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("/{id}/pagar")
+    public ResponseEntity<MultaResponseDTO> pagarMulta(@PathVariable int id) {
+        Multa multa = multaService.pagarMulta(id);
+        return ResponseEntity.ok(convertToDTO(multa));
+    }
+
+    @PutMapping("/{id}/condonar")
+    public ResponseEntity<MultaResponseDTO> condonarMulta(@PathVariable int id) {
+        Multa multa = multaService.condonarMulta(id);
+        return ResponseEntity.ok(convertToDTO(multa));
+    }
+
+    private MultaResponseDTO convertToDTO(Multa multa) {
+        MultaResponseDTO dto = new MultaResponseDTO();
+        dto.setId(multa.getId());
+        dto.setIdDevolucion(multa.getDevolucion().getId());
+        dto.setMontoTotal(multa.getMontoTotal());
+        dto.setPrecioLibro(multa.getPrecioLibro());
+        dto.setEstado(multa.getEstado().name());
+        dto.setFechaCalculo(multa.getFechaCalculo());
+
+        // Campos enriquecidos: Multa -> Devolucion -> Prestamo -> Usuario / libros prestados
+        Devolucion devolucion = multa.getDevolucion();
+        Prestamo prestamo = devolucion.getPrestamo();
+        dto.setIdPrestamo(prestamo.getId());
+        dto.setIdUsuario(prestamo.getUsuario().getId());
+        dto.setMemberName(prestamo.getUsuario().getNombre());
+        dto.setDaysOverdue(devolucion.getDiasRetraso());
+
+        String titulos = detallePrestamoRepository.findByPrestamoId(prestamo.getId()).stream()
+                .map(d -> d.getLibro().getTitulo())
+                .collect(Collectors.joining(", "));
+        dto.setBookTitle(titulos);
+
+        return dto;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/controller/UsuarioController.java">
+package com.aleslul.biblioteca.controller;
+
+import com.aleslul.biblioteca.dto.UsuarioDTO;
+import com.aleslul.biblioteca.dto.UsuarioRegistroDTO;
+import com.aleslul.biblioteca.dto.request.ActualizarRolRequestDTO;
+import com.aleslul.biblioteca.dto.request.UsuarioActualizarRequestDTO;
+import com.aleslul.biblioteca.service.UsuarioService;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/usuarios")
+public class UsuarioController {
+
+    @Autowired
+    private UsuarioService usuarioService;
+
+    @PostMapping
+    public ResponseEntity<UsuarioDTO> registrarUsuario(@Valid @RequestBody UsuarioRegistroDTO registroDTO) {
+        UsuarioDTO nuevoUsuario = usuarioService.registrarUsuario(registroDTO);
+        return new ResponseEntity<>(nuevoUsuario, HttpStatus.CREATED);
+    }
+
+    // DS02 - RF-02: Gestión dinámica de roles
+    @PutMapping("/{id}/rol")
+    public ResponseEntity<UsuarioDTO> actualizarRol(@PathVariable int id,
+                                                    @Valid @RequestBody ActualizarRolRequestDTO requestDTO) {
+        UsuarioDTO usuarioActualizado = usuarioService.actualizarRol(id, requestDTO.getIdRol());
+        return ResponseEntity.ok(usuarioActualizado);
+    }
+
+    // RF pendiente: edición general (nombre, correo, teléfono, DNI, status, rol) en un solo submit
+    @PutMapping("/{id}")
+    public ResponseEntity<UsuarioDTO> actualizarUsuario(@PathVariable int id,
+                                                        @Valid @RequestBody UsuarioActualizarRequestDTO requestDTO) {
+        UsuarioDTO usuarioActualizado = usuarioService.actualizarUsuario(id, requestDTO);
+        return ResponseEntity.ok(usuarioActualizado);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UsuarioDTO> obtenerUsuarioPorId(@PathVariable int id) {
+        UsuarioDTO usuario = usuarioService.obtenerPorId(id);
+        return ResponseEntity.ok(usuario);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<UsuarioDTO>> obtenerTodosLosUsuarios() {
+        List<UsuarioDTO> usuarios = usuarioService.obtenerTodos();
+        return ResponseEntity.ok(usuarios);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminarUsuario(@PathVariable int id) {
+        usuarioService.eliminarUsuario(id);
+        return ResponseEntity.noContent().build();
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/request/LibroRequestDTO.java">
+package com.aleslul.biblioteca.dto.request;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
+import lombok.Data;
+import java.math.BigDecimal;
+
+@Data
+public class LibroRequestDTO {
+
+    @NotBlank(message = "El título es obligatorio")
+    private String titulo;
+
+    @NotBlank(message = "El autor es obligatorio")
+    private String autor;
+
+    @NotBlank(message = "El ISBN es obligatorio")
+    private String isbn;
+
+    @NotBlank(message = "La categoría es obligatoria")
+    private String categoria;
+
+    @NotNull(message = "El precio es obligatorio")
+    @Positive(message = "El precio debe ser mayor a 0")
+    private BigDecimal precio;
+
+    @Positive(message = "El año de publicación debe ser válido")
+    private Integer anioPublicacion;
+
+    private String ubicacion;
+
+    private String descripcion;
+
+    private String urlPortada;
+
+    @NotNull(message = "El número de copias totales es obligatorio")
+    @Positive(message = "Debe haber al menos una copia")
+    private Integer copiesTotal;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/response/LibroResponseDTO.java">
+package com.aleslul.biblioteca.dto.response;
+
+import lombok.Data;
+import java.math.BigDecimal;
+
+@Data
+public class LibroResponseDTO {
+    private int id;
+    private String titulo;
+    private String autor;
+    private String isbn;
+    private String categoria;
+    private BigDecimal precio;
+    private Integer anioPublicacion;
+    private String ubicacion;
+    private String descripcion;
+    private String urlPortada;
+    private int copiesTotal;
+    private int copiesAvailable;
+    private boolean disponible;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/response/LogSistemaResponseDTO.java">
+package com.aleslul.biblioteca.dto.response;
+
+import lombok.Data;
+import java.time.LocalDateTime;
+
+@Data
+public class LogSistemaResponseDTO {
+    private int id;
+    private int idUsuario;
+    private String nombreUsuario;
+    private String tipoAccion;
+    private String severidad;
+    private String descripccion; // Respeta exactamente el nombre de atributo 'descripccion' del modelo original
+    private LocalDateTime fechaRegistro;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/response/MultaResponseDTO.java">
+package com.aleslul.biblioteca.dto.response;
+
+import lombok.Data;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+@Data
+public class MultaResponseDTO {
+    private int id;
+    private int idDevolucion;
+    private BigDecimal montoTotal;
+    private BigDecimal precioLibro;
+    private String estado;
+    private LocalDate fechaCalculo;
+
+    // Campos enriquecidos que el frontend necesita para pintar la tabla de multas
+    // sin tener que hacer joins manuales (Multa -> Devolucion -> Prestamo -> Usuario/Libro)
+    private int idPrestamo;
+    private int idUsuario;
+    private String memberName;
+    private String bookTitle;
+    private int daysOverdue;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/response/PrestamoResponseDTO.java">
+package com.aleslul.biblioteca.dto.response;
+
+import lombok.Data;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Data
+public class PrestamoResponseDTO {
+    private int id;
+    private int idUsuario;
+    private String nombreUsuario;
+    private LocalDateTime fechaPrestamo;
+    private LocalDateTime fechaVencimiento;
+    private String estado;
+    private List<DetallePrestamoResponseDTO> detalles;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/UsuarioDTO.java">
+package com.aleslul.biblioteca.dto;
+
+import lombok.Data;
+import java.time.LocalDate;
+
+@Data
+public class UsuarioDTO {
+    private int id;
+    private String nombre;
+    private String correo;
+    private String nombreRol;
+    private String telefono;
+    private String dni;
+    private LocalDate fechaMembresia;
+    private String estado;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/dto/UsuarioRegistroDTO.java">
+package com.aleslul.biblioteca.dto;
+
+import com.aleslul.biblioteca.validation.CorreoInstitucional;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+@Data
+public class UsuarioRegistroDTO {
+
+    @NotBlank(message = "El nombre es obligatorio")
+    private String nombre;
+
+    @NotBlank(message = "El correo es obligatorio")
+    @Email(message = "El correo no tiene un formato válido")
+    @CorreoInstitucional
+    private String correo;
+
+    @NotBlank(message = "La contraseña es obligatoria")
+    @Size(min = 8, message = "La contraseña debe tener al menos 8 caracteres")
+    private String contrasena;
+
+    @Positive(message = "Debe especificar un rol válido")
+    private int idRol;
+
+    @NotBlank(message = "El DNI es obligatorio")
+    private String dni;
+
+    private String telefono;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/exception/GlobalExceptionHandler.java">
+package com.aleslul.biblioteca.exception;
+
+import com.aleslul.biblioteca.dto.response.ErrorResponseDTO;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import com.aleslul.biblioteca.exception.AccesoDenegadoException;
+
+import java.time.LocalDateTime;
+import java.util.stream.Collectors;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    // 1. Captura cuando un recurso no existe (HTTP 404 NOT FOUND)
+    @ExceptionHandler(RecursoNoEncontradoException.class)
+    public ResponseEntity<ErrorResponseDTO> manejarRecursoNoEncontrado(
+            RecursoNoEncontradoException ex, HttpServletRequest request) {
+
+        ErrorResponseDTO error = new ErrorResponseDTO(
+                LocalDateTime.now(),
+                HttpStatus.NOT_FOUND.value(),
+                "Recurso no encontrado",
+                ex.getMessage(),
+                request.getRequestURI()
+        );
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
+
+    // 1.b Captura cuando se intenta crear un recurso que ya existe (HTTP 409 CONFLICT)
+    @ExceptionHandler(RecursoDuplicadoException.class)
+    public ResponseEntity<ErrorResponseDTO> manejarRecursoDuplicado(
+            RecursoDuplicadoException ex, HttpServletRequest request) {
+
+        ErrorResponseDTO error = new ErrorResponseDTO(
+                LocalDateTime.now(),
+                HttpStatus.CONFLICT.value(),
+                "Recurso duplicado",
+                ex.getMessage(),
+                request.getRequestURI()
+        );
+        return new ResponseEntity<>(error, HttpStatus.CONFLICT);
+    }
+
+    // 1.c Captura credenciales inválidas al iniciar sesión (HTTP 401 UNAUTHORIZED)
+    @ExceptionHandler({BadCredentialsException.class, AuthenticationException.class})
+    public ResponseEntity<ErrorResponseDTO> manejarAutenticacionFallida(
+            AuthenticationException ex, HttpServletRequest request) {
+
+        ErrorResponseDTO error = new ErrorResponseDTO(
+                LocalDateTime.now(),
+                HttpStatus.UNAUTHORIZED.value(),
+                "No autorizado",
+                "Correo o contraseña incorrectos",
+                request.getRequestURI()
+        );
+        return new ResponseEntity<>(error, HttpStatus.UNAUTHORIZED);
+    }
+
+    // 2. Captura violaciones a las reglas de negocio (HTTP 400 BAD REQUEST)
+    @ExceptionHandler(ReglaNegocioException.class)
+    public ResponseEntity<ErrorResponseDTO> manejarReglaNegocio(
+            ReglaNegocioException ex, HttpServletRequest request) {
+
+        ErrorResponseDTO error = new ErrorResponseDTO(
+                LocalDateTime.now(),
+                HttpStatus.BAD_REQUEST.value(),
+                "Conflicto de regla de negocio",
+                ex.getMessage(),
+                request.getRequestURI()
+        );
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    // 2.b Captura cuando un usuario intenta actuar sobre un recurso que no es suyo (HTTP 403 FORBIDDEN)
+    @ExceptionHandler(AccesoDenegadoException.class)
+    public ResponseEntity<ErrorResponseDTO> manejarAccesoDenegado(
+            AccesoDenegadoException ex, HttpServletRequest request) {
+
+        ErrorResponseDTO error = new ErrorResponseDTO(
+                LocalDateTime.now(),
+                HttpStatus.FORBIDDEN.value(),
+                "Acceso denegado",
+                ex.getMessage(),
+                request.getRequestURI()
+        );
+        return new ResponseEntity<>(error, HttpStatus.FORBIDDEN);
+    }
+
+    // 3. Captura errores de Bean Validation (@Valid) en los DTOs de request (HTTP 400 BAD REQUEST)
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ErrorResponseDTO> manejarValidacion(
+            MethodArgumentNotValidException ex, HttpServletRequest request) {
+
+        String mensaje = ex.getBindingResult().getFieldErrors().stream()
+                .map(fe -> fe.getField() + ": " + fe.getDefaultMessage())
+                .collect(Collectors.joining("; "));
+
+        ErrorResponseDTO error = new ErrorResponseDTO(
+                LocalDateTime.now(),
+                HttpStatus.BAD_REQUEST.value(),
+                "Error de validación",
+                mensaje,
+                request.getRequestURI()
+        );
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    // 4. Captura errores genéricos o inesperados del sistema (HTTP 500 INTERNAL SERVER ERROR)
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponseDTO> manejarErroresInesperados(
+            Exception ex, HttpServletRequest request) {
+
+        ErrorResponseDTO error = new ErrorResponseDTO(
+                LocalDateTime.now(),
+                HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                "Error interno del servidor",
+                "Ocurrió un error inesperado en el sistema. Por favor, intente más tarde.",
+                request.getRequestURI()
+        );
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/enums/EstadoReserva.java">
+package com.aleslul.biblioteca.model.enums;
+
+// Equivalencia con la maqueta (RF pendiente, sin renombrar el backend):
+// ACTIVA (backend)   <-> 'PENDIENTE' (maqueta)
+// ATENDIDA (backend) <-> 'COMPLETADA' (maqueta)
+// CANCELADA (backend) <-> 'CANCELADA' (maqueta, coincide)
+// Si se expone directamente al frontend maqueta, mapear en el DTO de salida.
+public enum EstadoReserva {
+    ACTIVA,
+    ATENDIDA,
+    CANCELADA
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/enums/NombreRol.java">
+package com.aleslul.biblioteca.model.enums;
+
+// Equivalencia con la maqueta (RF pendiente, sin renombrar el backend):
+// USUARIO_FINAL (backend) <-> 'ESTUDIANTE' (maqueta)
+// Si se expone directamente al frontend maqueta, mapear en el DTO de salida.
+public enum NombreRol {
+    ADMINISTRADOR,
+    BIBLIOTECARIO,
+    USUARIO_FINAL
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/Libro.java">
+package com.aleslul.biblioteca.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+
+@Entity
+@Table(name = "libros")
+@Data
+@NoArgsConstructor
+public class Libro {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_libro")
+    private Integer id;
+
+    @Column(length = 150, nullable = false)
+    private String titulo;
+
+    @Column(length = 100, nullable = false)
+    private String autor;
+
+    @Column(length = 20, nullable = false, unique = true)
+    private String isbn;
+
+    @Column(length = 50, nullable = false)
+    private String categoria;
+
+    @Column(precision = 10, scale = 2, nullable = false)
+    private BigDecimal precio;
+
+    // --- Campos requeridos por la maqueta (RF pendiente: alineación de modelo Libro) ---
+    @Column(name = "anio_publicacion")
+    private Integer anioPublicacion;
+
+    @Column(name = "ubicacion", length = 50)
+    private String ubicacion;
+
+    @Column(name = "descripcion", columnDefinition = "TEXT")
+    private String descripcion;
+
+    @Column(name = "url_portada", length = 500)
+    private String urlPortada;
+
+    // --- Modelo de stock (decisión de diseño: copies en vez de "1 fila = 1 ejemplar") ---
+    @Column(name = "copias_totales", nullable = false)
+    private int copiesTotal = 1;
+
+    @Column(name = "copias_disponibles", nullable = false)
+    private int copiesAvailable = 1;
+
+    /**
+     * Compatibilidad con el código existente que preguntaba por disponibilidad de "el" ejemplar.
+     * Ahora un libro está disponible si le queda al menos una copia libre.
+     * No es un campo persistido: se deriva de copiesAvailable.
+     */
+    public boolean isDisponible() {
+        return copiesAvailable > 0;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/LogSistema.java">
+package com.aleslul.biblioteca.model;
+
+import com.aleslul.biblioteca.model.enums.Severidad;
+import com.aleslul.biblioteca.model.enums.TipoAccion;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "logs_sistema")
+@Data
+
+public class LogSistema {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_usuario", nullable = false)
+    private Usuario usuario;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_accion", nullable = false)
+    private TipoAccion tipoAccion;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "severidad", length = 20, nullable = false)
+    private Severidad severidad;
+
+    @Column(length = 500)
+    private String descripccion;
+
+    @Column(name = "fecha_registro", nullable = false)
+    private LocalDateTime fechaRegistro;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/Rol.java">
+package com.aleslul.biblioteca.model;
+
+import com.aleslul.biblioteca.model.enums.NombreRol;
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Entity
+@Table(name = "roles")
+@Data
+public class Rol {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 255, nullable = false)
+    private NombreRol nombre;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/model/Usuario.java">
+package com.aleslul.biblioteca.model;
+
+import com.aleslul.biblioteca.model.enums.EstadoUsuario;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "usuarios")
+@Data
+public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(length = 100, nullable = false)
+    private String nombre;
+
+    @Column(length = 150, nullable = false, unique = true)
+    private String correo;
+
+    @Column(length = 255,nullable = false)
+    private String contrasena;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_rol", nullable = false)
+    private Rol rol;
+
+    @Column(length = 20)
+    private String telefono;
+
+    @Column(length = 20, unique = true)
+    private String dni;
+
+    // Fecha de alta: se autogenera al crear el usuario, el cliente no la envía
+    @Column(name = "fecha_membresia")
+    private LocalDate fechaMembresia;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20, nullable = false)
+    private EstadoUsuario estado = EstadoUsuario.ACTIVO;
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/repository/LibroRepository.java">
+package com.aleslul.biblioteca.repository;
+
+import com.aleslul.biblioteca.model.Libro;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+
+@Repository
+public interface LibroRepository extends JpaRepository<Libro, Integer> {
+
+    @Query("SELECT l FROM Libro l WHERE " +
+            "(:titulo IS NULL OR LOWER(l.titulo) LIKE LOWER(CONCAT('%', :titulo, '%'))) AND " +
+            "(:autor IS NULL OR LOWER(l.autor) LIKE LOWER(CONCAT('%', :autor, '%'))) AND " +
+            "(:isbn IS NULL OR l.isbn = :isbn) AND " +
+            "(:categoria IS NULL OR LOWER(l.categoria) LIKE LOWER(CONCAT('%', :categoria, '%')))")
+    List<Libro> buscarConFiltros(@Param("titulo") String titulo,
+                                 @Param("autor") String autor,
+                                 @Param("isbn") String isbn,
+                                 @Param("categoria") String category);
+
+    // RF10: libros con al menos una copia disponible, para cruzar contra reservas pendientes
+    List<Libro> findByCopiesAvailableGreaterThan(int copias);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/repository/ReservaRepository.java">
+// src/main/java/com/aleslul/biblioteca/repository/ReservaRepository.java
+
+package com.aleslul.biblioteca.repository;
+
+import com.aleslul.biblioteca.model.Reserva;
+import com.aleslul.biblioteca.model.enums.EstadoReserva;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+
+@Repository
+public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
+
+    List<Reserva> findByLibroIdAndEstado(int idLibro, EstadoReserva estado);
+
+    List<Reserva> findByLibroIdAndEstadoOrderByFechaReservaAsc(int idLibro, EstadoReserva estado);
+
+    // CORREGIDO: Se agregaron guiones bajos para resolver la ambigüedad de travesía en JPA
+    boolean existsByLibro_IdAndUsuario_IdAndEstado(int idLibro, int idUsuario, EstadoReserva estado);
+
+    List<Reserva> findByUsuarioId(int idUsuario);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/repository/UsuarioRepository.java">
+package com.aleslul.biblioteca.repository;
+
+import com.aleslul.biblioteca.model.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.Optional;
+
+@Repository
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+    // Para buscar un usuario por su correo durante el login
+    Optional<Usuario> findByCorreo(String correo);
+
+    // Para validar unicidad del DNI (la maqueta lo exige obligatorio y único)
+    boolean existsByDni(String dni);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/scheduler/NotificacionScheduler.java">
+package com.aleslul.biblioteca.scheduler;
+
+import com.aleslul.biblioteca.model.Libro;
+import com.aleslul.biblioteca.model.Prestamo;
+import com.aleslul.biblioteca.model.Reserva;
+import com.aleslul.biblioteca.model.enums.EstadoPrestamo;
+import com.aleslul.biblioteca.model.enums.EstadoReserva;
+import com.aleslul.biblioteca.model.enums.TipoNotificacion;
+import com.aleslul.biblioteca.repository.LibroRepository;
+import com.aleslul.biblioteca.repository.PrestamoRepository;
+
+import com.aleslul.biblioteca.model.enums.TipoAccion;
+import com.aleslul.biblioteca.repository.ReservaRepository;
+import com.aleslul.biblioteca.service.LogSistemaService;
+import com.aleslul.biblioteca.service.NotificacionService;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+// RF10: revisa diariamente préstamos por vencer y libros disponibles con reservas pendientes,
+// y persiste las notificaciones correspondientes (el envío real de push/email queda fuera de alcance).
+@Component
+public class NotificacionScheduler {
+    @Autowired
+    private NotificacionService notificacionService;
+
+    @Autowired
+    private LogSistemaService logSistemaService;
+
+    @Autowired
+    private PrestamoRepository prestamoRepository;
+
+    @Autowired
+    private LibroRepository libroRepository;
+
+    @Autowired
+    private ReservaRepository reservaRepository;
+
+    @Value("${app.notificaciones.horas-anticipacion-vencimiento}")
+    private long horasAnticipacionVencimiento;
+
+    @Scheduled(cron = "${app.notificaciones.cron-revision-diaria}")
+    public void revisionDiaria() {
+        notificarPrestamosPorVencer();
+        notificarLibrosDisponibles();
+    }
+
+    private void notificarPrestamosPorVencer() {
+        LocalDateTime ahora = LocalDateTime.now();
+        LocalDateTime limite = ahora.plusHours(horasAnticipacionVencimiento);
+
+        List<Prestamo> prestamosPorVencer = prestamoRepository.findByEstadoInAndFechaVencimientoBetween(
+                List.of(EstadoPrestamo.ACTIVO, EstadoPrestamo.RENOVADO), ahora, limite);
+
+        for (Prestamo prestamo : prestamosPorVencer) {
+            String mensaje = "Tu préstamo #" + prestamo.getId() + " vence el " + prestamo.getFechaVencimiento() +
+                    ". Recuerda devolverlo o renovarlo a tiempo.";
+            notificacionService.crearSiNoExiste(
+                    prestamo.getUsuario().getId(),
+                    TipoNotificacion.PRESTAMO_POR_VENCER,
+                    mensaje,
+                    prestamo.getId());
+
+            logSistemaService.registrarAccion(
+                    prestamo.getUsuario().getId(),
+                    TipoAccion.NOTIFICACION_VENCIMIENTO,
+                    "Notificación de vencimiento generada para el préstamo ID " + prestamo.getId());
+        }
+    }
+
+    private void notificarLibrosDisponibles() {
+        List<Libro> librosDisponibles = libroRepository.findByCopiesAvailableGreaterThan(0);
+
+        for (Libro libro : librosDisponibles) {
+            List<Reserva> reservasActivas = reservaRepository
+                    .findByLibroIdAndEstadoOrderByFechaReservaAsc(libro.getId(), EstadoReserva.ACTIVA);
+
+            if (reservasActivas.isEmpty()) {
+                continue;
+            }
+
+            // Se notifica a quien reservó primero (orden de llegada).
+            Reserva primeraReserva = reservasActivas.get(0);
+            String mensaje = "El libro '" + libro.getTitulo() + "' que reservaste ya está disponible.";
+            notificacionService.crearSiNoExiste(
+                    primeraReserva.getUsuario().getId(),
+                    TipoNotificacion.LIBRO_DISPONIBLE,
+                    mensaje,
+                    libro.getId());
+
+            logSistemaService.registrarAccion(
+                    primeraReserva.getUsuario().getId(),
+                    TipoAccion.NOTIFICACION_LIBRO_DISPONIBLE,
+                    "Notificación de disponibilidad generada para el libro '" + libro.getTitulo() + "'");
+        }
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/security/JwtAuthenticationFilter.java">
+package com.aleslul.biblioteca.security;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import java.io.IOException;
+
+@Component
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+    @Autowired
+    private JwtService jwtService;
+
+    @Autowired
+    private CustomUserDetailsService userDetailsService;
+
+    @Override
+    protected void doFilterInternal(@NonNull HttpServletRequest request,
+                                     @NonNull HttpServletResponse response,
+                                     @NonNull FilterChain filterChain) throws ServletException, IOException {
+
+        String authHeader = request.getHeader("Authorization");
+
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
+        String token = authHeader.substring(7);
+
+        try {
+            String correo = jwtService.extraerCorreo(token);
+
+            if (correo != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                UserDetails userDetails = userDetailsService.loadUserByUsername(correo);
+
+                if (jwtService.esTokenValido(token, userDetails)) {
+                    UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
+                            userDetails, null, userDetails.getAuthorities());
+                    authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                    SecurityContextHolder.getContext().setAuthentication(authToken);
+                }
+            }
+        } catch (Exception ex) {
+            // TEMPORAL: para diagnosticar el 401 — quitar después de resolver el problema.
+            System.out.println("### JWT FILTER ERROR: " + ex.getClass().getName() + " -> " + ex.getMessage());
+            ex.printStackTrace();
+            SecurityContextHolder.clearContext();
+        }
+
+        filterChain.doFilter(request, response);
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/impl/DevolucionServiceImpl.java">
+package com.aleslul.biblioteca.service.impl;
+
+import com.aleslul.biblioteca.exception.RecursoNoEncontradoException;
+import com.aleslul.biblioteca.exception.ReglaNegocioException;
+import com.aleslul.biblioteca.model.*;
+import com.aleslul.biblioteca.model.enums.*;
+import com.aleslul.biblioteca.repository.*;
+import com.aleslul.biblioteca.service.DevolucionService;
+import com.aleslul.biblioteca.service.LogSistemaService;
+import com.aleslul.biblioteca.service.MultaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.List;
+
+@Service
+public class DevolucionServiceImpl implements DevolucionService {
+
+    @Autowired
+    private MultaService multaService;
+
+    @Autowired
+    private LogSistemaService logSistemaService;
+
+    @Autowired
+    private DevolucionRepository devolucionRepository;
+
+    @Autowired
+    private PrestamoRepository prestamoRepository;
+
+    @Autowired
+    private DetallePrestamoRepository detallePrestamoRepository;
+
+    @Autowired
+    private LibroRepository libroRepository;
+
+    @Autowired
+    private MultaRepository multaRepository;
+
+    @Override
+    @Transactional
+    public Devolucion registrarDevolucion(int idPrestamo) {
+        // 1. Obtener préstamo activo
+        Prestamo prestamo = prestamoRepository.findById(idPrestamo)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Préstamo no encontrado con ID: " + idPrestamo)); // Reemplazado[cite: 2]
+
+        if (prestamo.getEstado() == EstadoPrestamo.DEVUELTO) {
+            throw new ReglaNegocioException("Este préstamo ya fue devuelto previamente"); // Reemplazado[cite: 2]
+        }
+
+        // 2. Obtener los libros pendientes de este préstamo (puede haber varios)
+        List<DetallePrestamo> detallesPendientes = detallePrestamoRepository.findByPrestamoIdAndDevueltoFalse(idPrestamo);
+        if (detallesPendientes.isEmpty()) {
+            throw new ReglaNegocioException("Este préstamo no tiene libros pendientes de devolución");
+        }
+
+        LocalDateTime ahora = LocalDateTime.now();
+
+        // 3. Calcular días de retraso exactos[cite: 2]
+        long dias = ChronoUnit.DAYS.between(prestamo.getFechaVencimiento(), ahora);
+        int diasRetraso = dias > 0 ? (int) dias : 0;
+        boolean requiereMulta = diasRetraso > 0;
+
+        // 4. Crear y persistir la devolución[cite: 2]
+        Devolucion devolucion = new Devolucion();
+        devolucion.setPrestamo(prestamo);
+        devolucion.setFechaDevolucion(ahora);
+        devolucion.setDiasRetraso(diasRetraso);
+        devolucion.setConMulta(requiereMulta);
+        Devolucion devolucionGuardada = devolucionRepository.save(devolucion);
+
+        // 5. Actualizar estados del dominio circular[cite: 2]
+        prestamo.setEstado(EstadoPrestamo.DEVUELTO);
+        prestamoRepository.save(prestamo);
+
+        // 6. Marcar cada libro del préstamo como devuelto y disponible de nuevo
+        BigDecimal valorTotalLibros = BigDecimal.ZERO;
+        for (DetallePrestamo detalle : detallesPendientes) {
+            detalle.setDevuelto(true);
+            detallePrestamoRepository.save(detalle);
+
+            Libro libro = detalle.getLibro();
+            libro.setCopiesAvailable(libro.getCopiesAvailable() + 1);
+            libroRepository.save(libro);
+
+            valorTotalLibros = valorTotalLibros.add(libro.getPrecio());
+        }
+
+        // 7. Si hay mora, disparar de forma automática la creación de la Multa
+        // El cálculo se basa en el valor total de los libros del préstamo (uno o varios)
+        if (requiereMulta) {
+            Multa multa = new Multa();
+            multa.setDevolucion(devolucionGuardada);
+            multa.setPrecioLibro(valorTotalLibros);
+            multa.setEstado(EstadoMulta.PENDIENTE);
+            multa.setFechaCalculo(ahora.toLocalDate());
+
+            // Invoca la regla de negocio matemática
+            multa.setMontoTotal(multaService.calcularAlgoritmoMulta(diasRetraso, valorTotalLibros));
+            multaRepository.save(multa);
+
+            logSistemaService.registrarAccion(
+                    prestamo.getUsuario().getId(),
+                    TipoAccion.NOTIFICACION_MULTA_APLICADA,
+                    "Multa de S/. " + multa.getMontoTotal() + " aplicada por " + diasRetraso + " día(s) de retraso (préstamo ID " + idPrestamo + ")");
+        }
+        return devolucionGuardada;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/impl/LibroServiceImpl.java">
+package com.aleslul.biblioteca.service.impl;
+
+import com.aleslul.biblioteca.exception.RecursoNoEncontradoException;
+import com.aleslul.biblioteca.exception.ReglaNegocioException;
+import com.aleslul.biblioteca.model.Libro;
+import com.aleslul.biblioteca.model.enums.EstadoReserva;
+import com.aleslul.biblioteca.repository.DetallePrestamoRepository;
+import com.aleslul.biblioteca.repository.LibroRepository;
+import com.aleslul.biblioteca.repository.ReservaRepository;
+import com.aleslul.biblioteca.service.LibroService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
+public class LibroServiceImpl implements LibroService {
+
+    @Autowired
+    private LibroRepository libroRepository;
+
+    @Autowired
+    private DetallePrestamoRepository detallePrestamoRepository;
+
+    @Autowired
+    private ReservaRepository reservaRepository;
+
+    @Override
+    public Libro guardarLibro(Libro libro) {
+        return libroRepository.save(libro);
+    }
+
+    @Override
+    public Libro obtenerPorId(int id) {
+        return libroRepository.findById(id)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Libro no encontrado con ID: " + id)); // Reemplazado[cite: 2]
+    }
+
+    @Override
+    public List<Libro> listarTodos() {
+        return libroRepository.findAll();
+    }
+
+    @Override
+    public List<Libro> buscarLibros(String titulo, String autor, String isbn, String categoria) {
+        return libroRepository.buscarConFiltros(titulo, autor, isbn, categoria);
+    }
+
+    @Override
+    public Libro actualizarLibro(int id, Libro datosActualizados) {
+        Libro libro = obtenerPorId(id);
+
+        int copiasPrestadasActualmente = libro.getCopiesTotal() - libro.getCopiesAvailable();
+        if (datosActualizados.getCopiesTotal() < copiasPrestadasActualmente) {
+            throw new ReglaNegocioException("No se puede reducir las copias totales a " +
+                    datosActualizados.getCopiesTotal() + ": hay " + copiasPrestadasActualmente +
+                    " copia(s) actualmente prestada(s)");
+        }
+
+        libro.setTitulo(datosActualizados.getTitulo());
+        libro.setAutor(datosActualizados.getAutor());
+        libro.setIsbn(datosActualizados.getIsbn());
+        libro.setCategoria(datosActualizados.getCategoria());
+        libro.setPrecio(datosActualizados.getPrecio());
+        libro.setAnioPublicacion(datosActualizados.getAnioPublicacion());
+        libro.setUbicacion(datosActualizados.getUbicacion());
+        libro.setDescripcion(datosActualizados.getDescripcion());
+        libro.setUrlPortada(datosActualizados.getUrlPortada());
+
+        // Ajustar copiesAvailable manteniendo la cantidad de copias ya prestadas
+        libro.setCopiesTotal(datosActualizados.getCopiesTotal());
+        libro.setCopiesAvailable(datosActualizados.getCopiesTotal() - copiasPrestadasActualmente);
+
+        return libroRepository.save(libro);
+    }
+
+    @Override
+    public void eliminarLibro(int id) {
+        Libro libro = obtenerPorId(id);
+
+        if (libro.getCopiesAvailable() < libro.getCopiesTotal()) {
+            throw new ReglaNegocioException("No se puede eliminar el libro '" + libro.getTitulo() +
+                    "': tiene copias actualmente prestadas");
+        }
+        if (detallePrestamoRepository.existsByLibro_IdAndDevueltoFalse(id)) {
+            throw new ReglaNegocioException("No se puede eliminar el libro '" + libro.getTitulo() +
+                    "': tiene préstamos históricos asociados sin devolver");
+        }
+        if (!reservaRepository.findByLibroIdAndEstado(id, EstadoReserva.ACTIVA).isEmpty()) {
+            throw new ReglaNegocioException("No se puede eliminar el libro '" + libro.getTitulo() +
+                    "': tiene reservas activas");
+        }
+
+        libroRepository.delete(libro);
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/impl/LogSistemaServiceImpl.java">
+package com.aleslul.biblioteca.service.impl;
+
+import com.aleslul.biblioteca.exception.RecursoNoEncontradoException;
+import com.aleslul.biblioteca.model.LogSistema;
+import com.aleslul.biblioteca.model.Usuario;
+import com.aleslul.biblioteca.model.enums.Severidad;
+import com.aleslul.biblioteca.model.enums.TipoAccion;
+import com.aleslul.biblioteca.repository.LogSistemaRepository;
+import com.aleslul.biblioteca.repository.UsuarioRepository;
+import com.aleslul.biblioteca.service.LogSistemaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Service
+public class LogSistemaServiceImpl implements LogSistemaService {
+
+    @Autowired
+    private LogSistemaRepository logSistemaRepository;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    @Override
+    public void registrarAccion(int idUsuario, TipoAccion tipoAccion, String descripcion) {
+        Usuario usuario = usuarioRepository.findById(idUsuario)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Usuario no encontrado para registrar auditoría con ID: " + idUsuario)); // Reemplazado[cite: 2]
+
+        LogSistema log = new LogSistema();
+        log.setUsuario(usuario);
+        log.setTipoAccion(tipoAccion);
+        log.setSeveridad(mapearSeveridad(tipoAccion));
+        log.setDescripccion(descripcion); // Mapeado exactamente al atributo 'descripccion' de tu entidad[cite: 2]
+        log.setFechaRegistro(LocalDateTime.now());
+
+        logSistemaRepository.save(log);
+    }
+
+    @Override
+    public List<LogSistema> obtenerTodosLosLogs() {
+        return logSistemaRepository.findAllByOrderByFechaRegistroDesc();
+    }
+
+    @Override
+    public List<LogSistema> obtenerLogsPorUsuario(int idUsuario) {
+        return logSistemaRepository.findByUsuarioId(idUsuario);
+    }
+
+    // RF pendiente: severidad esperada por la maqueta ('INFO' | 'WARNING' | 'CRITICAL')
+    private Severidad mapearSeveridad(TipoAccion tipoAccion) {
+        switch (tipoAccion) {
+            case NOTIFICACION_MULTA_APLICADA:
+                return Severidad.CRITICAL;
+            case REGISTRO_PRESTAMO:
+            case RENOVACION_PRESTAMO:
+            case NOTIFICACION_VENCIMIENTO:
+            case NOTIFICACION_LIBRO_DISPONIBLE:
+            case REPORTE_CIRCULACION:
+            case REPORTE_LIBROS_SOLICITADOS:
+            case REPORTE_ESTADISTICAS:
+            default:
+                return Severidad.INFO;
+        }
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/impl/MultaServiceImpl.java">
+package com.aleslul.biblioteca.service.impl;
+
+import com.aleslul.biblioteca.exception.RecursoNoEncontradoException;
+import com.aleslul.biblioteca.model.Multa;
+import com.aleslul.biblioteca.model.enums.EstadoMulta;
+import com.aleslul.biblioteca.repository.MultaRepository;
+import com.aleslul.biblioteca.service.MultaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.List;
+
+@Service
+public class MultaServiceImpl implements MultaService {
+
+    @Autowired
+    private MultaRepository multaRepository;
+
+    @Override
+    public Multa pagarMulta(int idMulta) {
+        Multa multa = multaRepository.findById(idMulta)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Multa no encontrada con ID: " + idMulta)); // Reemplazado[cite: 2]
+        multa.setEstado(EstadoMulta.PAGADA);
+        return multaRepository.save(multa);
+    }
+
+    @Override
+    public Multa condonarMulta(int idMulta) {
+        Multa multa = multaRepository.findById(idMulta)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Multa no encontrada con ID: " + idMulta)); // Reemplazado[cite: 2]
+        multa.setEstado(EstadoMulta.CONDONADA);
+        return multaRepository.save(multa);
+    }
+
+    // RF pendiente: el frontend necesita listar multas (GET /api/multas no existía)
+    @Override
+    public List<Multa> obtenerTodas() {
+        return multaRepository.findAll();
+    }
+
+    @Override
+    public List<Multa> obtenerPorUsuario(int idUsuario) {
+        return multaRepository.findByDevolucion_Prestamo_Usuario_Id(idUsuario);
+    }
+
+    @Override
+    public BigDecimal calcularAlgoritmoMulta(int diasRetraso, BigDecimal precioLibro) {
+        BigDecimal montoCalculado;
+
+        // Tramo 1: Primeros 7 días -> S/. 2 por día[cite: 2]
+        if (diasRetraso <= 7) {
+            montoCalculado = BigDecimal.valueOf(diasRetraso * 2L);
+        }
+        // Tramo 2: Del día 8 al 14 -> S/. 14 base más S/. 4 por cada día extra[cite: 2]
+        else if (diasRetraso <= 14) {
+            int diasExtraTramo2 = diasRetraso - 7;
+            montoCalculado = BigDecimal.valueOf(14 + (diasExtraTramo2 * 4L));
+        }
+        // Tramo 3: A partir del día 15 -> 50% del valor del libro más la mora fija acumulada de 42 soles[cite: 2]
+        else {
+            BigDecimal moraAcumuladaSemanasPrevias = BigDecimal.valueOf(42); // 14 soles (S1) + 28 soles (S2)[cite: 2]
+            BigDecimal cincuentaPorCientoLibro = precioLibro.multiply(BigDecimal.valueOf(0.5));
+            montoCalculado = cincuentaPorCientoLibro.add(moraAcumuladaSemanasPrevias);
+        }
+
+        // Regla de Protección del Activo (Tope máximo): Valor completo del Libro + 20% de gastos operativos[cite: 2]
+        BigDecimal topeMaximoPermitido = precioLibro.multiply(BigDecimal.valueOf(1.2));
+
+        if (montoCalculado.compareTo(topeMaximoPermitido) > 0) {
+            montoCalculado = topeMaximoPermitido;
+        }
+
+        // Los montos son en soles; se normaliza a 2 decimales (céntimos) para evitar
+        // escalas inconsistentes al persistir/comparar BigDecimal.
+        return montoCalculado.setScale(2, RoundingMode.HALF_UP);
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/impl/UsuarioServiceImpl.java">
+package com.aleslul.biblioteca.service.impl;
+
+import com.aleslul.biblioteca.dto.UsuarioDTO;
+import com.aleslul.biblioteca.dto.UsuarioRegistroDTO;
+import com.aleslul.biblioteca.dto.request.UsuarioActualizarRequestDTO;
+import com.aleslul.biblioteca.exception.RecursoDuplicadoException;
+import com.aleslul.biblioteca.exception.RecursoNoEncontradoException;
+import com.aleslul.biblioteca.exception.ReglaNegocioException;
+import com.aleslul.biblioteca.model.Rol;
+import com.aleslul.biblioteca.model.Usuario;
+import com.aleslul.biblioteca.model.enums.EstadoUsuario;
+import com.aleslul.biblioteca.repository.RolRepository;
+import com.aleslul.biblioteca.repository.UsuarioRepository;
+import com.aleslul.biblioteca.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class UsuarioServiceImpl implements UsuarioService {
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private RolRepository rolRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Override
+    public UsuarioDTO registrarUsuario(UsuarioRegistroDTO registroDTO) {
+        // DS01 - RF-01: rechazar correos ya registrados (409 Conflict)
+        if (usuarioRepository.findByCorreo(registroDTO.getCorreo()).isPresent()) {
+            throw new RecursoDuplicadoException("Ya existe un usuario registrado con el correo: " + registroDTO.getCorreo());
+        }
+        // RF pendiente: DNI único
+        if (usuarioRepository.existsByDni(registroDTO.getDni())) {
+            throw new RecursoDuplicadoException("Ya existe un usuario registrado con el DNI: " + registroDTO.getDni());
+        }
+
+        Usuario usuario = new Usuario();
+        usuario.setNombre(registroDTO.getNombre());
+        usuario.setCorreo(registroDTO.getCorreo());
+        usuario.setContrasena(passwordEncoder.encode(registroDTO.getContrasena())); // Contraseña hasheada con BCrypt
+        usuario.setDni(registroDTO.getDni());
+        usuario.setTelefono(registroDTO.getTelefono());
+        usuario.setFechaMembresia(LocalDate.now()); // Se autogenera, el cliente no la envía
+        usuario.setEstado(EstadoUsuario.ACTIVO);
+
+        Rol rol = rolRepository.findById(registroDTO.getIdRol())
+                .orElseThrow(() -> new RecursoNoEncontradoException("El rol especificado con ID " + registroDTO.getIdRol() + " no existe")); // Reemplazado
+        usuario.setRol(rol);
+
+        Usuario usuarioGuardado = usuarioRepository.save(usuario);
+        return convertToDTO(usuarioGuardado);
+    }
+
+    @Override
+    public UsuarioDTO obtenerPorId(int id) {
+        Usuario usuario = usuarioRepository.findById(id)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Usuario no encontrado con ID: " + id)); // Reemplazado
+        return convertToDTO(usuario);
+    }
+
+    @Override
+    public List<UsuarioDTO> obtenerTodos() {
+        return usuarioRepository.findAll().stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void eliminarUsuario(int id) {
+        if (!usuarioRepository.existsById(id)) {
+            throw new RecursoNoEncontradoException("No se puede eliminar un usuario inexistente con ID: " + id); // Reemplazado
+        }
+        usuarioRepository.deleteById(id);
+    }
+
+    @Override
+    public UsuarioDTO actualizarRol(int idUsuario, int idRol) {
+        // DS02 - RF-02: verifica que el usuario exista, si no 404
+        Usuario usuario = usuarioRepository.findById(idUsuario)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Usuario no encontrado con ID: " + idUsuario));
+
+        // DS02 - RF-02: verifica que el rol exista, si no 404
+        Rol rol = rolRepository.findById(idRol)
+                .orElseThrow(() -> new RecursoNoEncontradoException("El rol especificado con ID " + idRol + " no existe"));
+
+        usuario.setRol(rol);
+        Usuario usuarioActualizado = usuarioRepository.save(usuario);
+        return convertToDTO(usuarioActualizado);
+    }
+
+    @Override
+    public UsuarioDTO actualizarUsuario(int idUsuario, UsuarioActualizarRequestDTO datos) {
+        Usuario usuario = usuarioRepository.findById(idUsuario)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Usuario no encontrado con ID: " + idUsuario));
+
+        // Validar unicidad de correo si cambió
+        if (!usuario.getCorreo().equalsIgnoreCase(datos.getCorreo())
+                && usuarioRepository.findByCorreo(datos.getCorreo()).isPresent()) {
+            throw new RecursoDuplicadoException("Ya existe un usuario registrado con el correo: " + datos.getCorreo());
+        }
+        // Validar unicidad de DNI si cambió
+        if (!datos.getDni().equals(usuario.getDni()) && usuarioRepository.existsByDni(datos.getDni())) {
+            throw new RecursoDuplicadoException("Ya existe un usuario registrado con el DNI: " + datos.getDni());
+        }
+
+        Rol rol = rolRepository.findById(datos.getIdRol())
+                .orElseThrow(() -> new RecursoNoEncontradoException("El rol especificado con ID " + datos.getIdRol() + " no existe"));
+
+        EstadoUsuario nuevoEstado;
+        try {
+            nuevoEstado = EstadoUsuario.valueOf(datos.getEstado().toUpperCase());
+        } catch (IllegalArgumentException ex) {
+            throw new ReglaNegocioException("Estado inválido: " + datos.getEstado() + " (debe ser ACTIVO o INACTIVO)");
+        }
+
+        usuario.setNombre(datos.getNombre());
+        usuario.setCorreo(datos.getCorreo());
+        usuario.setDni(datos.getDni());
+        usuario.setTelefono(datos.getTelefono());
+        usuario.setRol(rol);
+        usuario.setEstado(nuevoEstado);
+
+        Usuario usuarioActualizado = usuarioRepository.save(usuario);
+        return convertToDTO(usuarioActualizado);
+    }
+
+    private UsuarioDTO convertToDTO(Usuario usuario) {
+        UsuarioDTO dto = new UsuarioDTO();
+        dto.setId(usuario.getId());
+        dto.setNombre(usuario.getNombre());
+        dto.setCorreo(usuario.getCorreo());
+        dto.setNombreRol(usuario.getRol().getNombre().name());
+        dto.setTelefono(usuario.getTelefono());
+        dto.setDni(usuario.getDni());
+        dto.setFechaMembresia(usuario.getFechaMembresia());
+        dto.setEstado(usuario.getEstado().name());
+        return dto;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/LibroService.java">
+package com.aleslul.biblioteca.service;
+
+import com.aleslul.biblioteca.model.Libro;
+import java.util.List;
+
+public interface LibroService {
+    Libro guardarLibro(Libro libro);
+    Libro obtenerPorId(int id);
+    List<Libro> listarTodos();
+    List<Libro> buscarLibros(String titulo, String autor, String isbn, String categoria);
+    Libro actualizarLibro(int id, Libro datosActualizados);
+    void eliminarLibro(int id);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/MultaService.java">
+package com.aleslul.biblioteca.service;
+
+import com.aleslul.biblioteca.model.Multa;
+import java.math.BigDecimal;
+import java.util.List;
+
+public interface MultaService {
+    Multa pagarMulta(int idMulta);
+    Multa condonarMulta(int idMulta);
+    BigDecimal calcularAlgoritmoMulta(int diasRetraso, BigDecimal precioLibro);
+
+    // RF pendiente: el frontend necesita listar multas (GET /api/multas no existía)
+    List<Multa> obtenerTodas();
+    List<Multa> obtenerPorUsuario(int idUsuario);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/ReservaService.java">
+package com.aleslul.biblioteca.service;
+
+import com.aleslul.biblioteca.dto.request.ReservaRequestDTO;
+import com.aleslul.biblioteca.dto.response.ReservaResponseDTO;
+
+import java.util.List;
+
+public interface ReservaService {
+    ReservaResponseDTO registrarReserva(ReservaRequestDTO requestDTO);
+    void cancelarReserva(int id);
+    List<ReservaResponseDTO> obtenerPorUsuario(int idUsuario);
+    List<ReservaResponseDTO> obtenerTodas();
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/UsuarioService.java">
+package com.aleslul.biblioteca.service;
+
+import com.aleslul.biblioteca.dto.UsuarioDTO;
+import com.aleslul.biblioteca.dto.UsuarioRegistroDTO;
+import java.util.List;
+
+public interface UsuarioService {
+    UsuarioDTO registrarUsuario(UsuarioRegistroDTO registroDTO);
+    UsuarioDTO obtenerPorId(int id);
+    List<UsuarioDTO> obtenerTodos();
+    void eliminarUsuario(int id);
+    // DS02 - RF-02: Gestión dinámica de roles
+    UsuarioDTO actualizarRol(int idUsuario, int idRol);
+    // RF pendiente: edición general (nombre, correo, teléfono, DNI, status, rol)
+    UsuarioDTO actualizarUsuario(int idUsuario, com.aleslul.biblioteca.dto.request.UsuarioActualizarRequestDTO datos);
+}
+</file>
+
+<file path="src/main/resources/application.properties">
+spring.application.name=biblioteca
+server.port=8081
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# En local (XAMPP) usa los valores por defecto de abajo.
+# En producción (Render), estas 5 variables se sobreescriben con las de Aiven.
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:dbbiblioteca}?useSSL=${MYSQL_USE_SSL:false}&requireSSL=${MYSQL_USE_SSL:false}&serverTimezone=UTC
+spring.datasource.username=${MYSQL_USER:root}
+spring.datasource.password=${MYSQL_PASSWORD:}
+
+# --- CONFIGURACIÓN DE JWT ---
+jwt.secret=QnJpZ2h0QmlibGlvdGVjYVNlY3JldEtleTIwMjYxMjM0NTY3ODk=
+jwt.expiration-ms=86400000
+
+# --- CONFIGURACIÓN DE PRÉSTAMOS (RF-07) ---
+app.prestamos.horas-ventana-renovacion=48
+app.prestamos.dias-extension-renovacion=7
+
+# --- CONFIGURACIÓN DE CORREO INSTITUCIONAL (RF-01) ---
+app.correo.dominio-institucional=@uss.edu.pe
+
+# --- CONFIGURACIÓN DE NOTIFICACIONES (RF-10) ---
+app.notificaciones.horas-anticipacion-vencimiento=24
+app.notificaciones.cron-revision-diaria=0 0 8 * * *
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/controller/ReservaController.java">
+// src/main/java/com/aleslul/biblioteca/controller/ReservaController.java
+
+package com.aleslul.biblioteca.controller;
+
+import com.aleslul.biblioteca.dto.request.ReservaRequestDTO;
+import com.aleslul.biblioteca.dto.response.ReservaResponseDTO;
+import com.aleslul.biblioteca.service.ReservaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/reservas")
+public class ReservaController {
+
+    @Autowired
+    private ReservaService reservaService;
+
+    @PostMapping
+    public ResponseEntity<ReservaResponseDTO> registrarReserva(@RequestBody ReservaRequestDTO requestDTO) {
+        return new ResponseEntity<>(reservaService.registrarReserva(requestDTO), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/usuario/{idUsuario}")
+    public ResponseEntity<List<ReservaResponseDTO>> obtenerPorUsuario(@PathVariable int idUsuario) {
+        return ResponseEntity.ok(reservaService.obtenerPorUsuario(idUsuario));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ReservaResponseDTO>> obtenerTodas() {
+        return ResponseEntity.ok(reservaService.obtenerTodas());
+    }
+
+    // MANDATORIO: Asegurar que exista este mapeo exacto para soportar el DELETE del frontend
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> cancelarReserva(@PathVariable int id) {
+        reservaService.cancelarReserva(id);
+        // Devolvemos un JSON estructurado para evitar que el JSON parser del frontend falle por cuerpo vacío
+        return ResponseEntity.ok(Map.of("mensaje", "Reserva cancelada exitosamente"));
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/repository/DetallePrestamoRepository.java">
+// src/main/java/com/aleslul/biblioteca/repository/DetallePrestamoRepository.java
+
+package com.aleslul.biblioteca.repository;
+
+import com.aleslul.biblioteca.dto.response.LibroMasSolicitadoResponseDTO;
+import com.aleslul.biblioteca.model.DetallePrestamo;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Repository
+public interface DetallePrestamoRepository extends JpaRepository<DetallePrestamo, Integer> {
+
+    List<DetallePrestamo> findByPrestamoId(int idPrestamo);
+
+    List<DetallePrestamo> findByPrestamoIdAndDevueltoFalse(int idPrestamo);
+
+    boolean existsByLibro_IdAndDevueltoFalse(int idLibro);
+
+    // NUEVO: Valida si el usuario ya cuenta con un ejemplar activo sin devolver
+    boolean existsByLibro_IdAndPrestamo_Usuario_IdAndDevueltoFalse(int idLibro, int idUsuario);
+
+    @Query("SELECT new com.aleslul.biblioteca.dto.response.LibroMasSolicitadoResponseDTO(" +
+            "d.libro.id, d.libro.titulo, d.libro.autor, COUNT(d)) " +
+            "FROM DetallePrestamo d WHERE " +
+            "(:desde IS NULL OR d.prestamo.fechaPrestamo >= :desde) AND " +
+            "(:hasta IS NULL OR d.prestamo.fechaPrestamo <= :hasta) " +
+            "GROUP BY d.libro.id, d.libro.titulo, d.libro.autor " +
+            "ORDER BY COUNT(d) DESC")
+    List<LibroMasSolicitadoResponseDTO> obtenerLibrosMasSolicitados(
+            @Param("desde") LocalDateTime desde, @Param("hasta") LocalDateTime hasta, Pageable pageable);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/repository/MultaRepository.java">
+package com.aleslul.biblioteca.repository;
+
+import com.aleslul.biblioteca.model.Multa;
+import com.aleslul.biblioteca.model.enums.EstadoMulta;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface MultaRepository extends JpaRepository<Multa, Integer> {
+
+    // RF pendiente: verifica si un usuario tiene multas en un estado dado,
+    // navegando Multa -> Devolucion -> Prestamo -> Usuario
+    boolean existsByDevolucion_Prestamo_Usuario_IdAndEstado(int idUsuario, EstadoMulta estado);
+
+    // RF pendiente: multas de un usuario específico (para la vista de estudiante)
+    List<Multa> findByDevolucion_Prestamo_Usuario_Id(int idUsuario);
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/security/CustomUserDetailsService.java">
+package com.aleslul.biblioteca.security;
+
+import com.aleslul.biblioteca.model.Usuario;
+import com.aleslul.biblioteca.repository.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Service
+public class CustomUserDetailsService implements UserDetailsService {
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    // @Transactional es lo que soluciona el LazyInitializationException: abre su propia
+    // sesión de Hibernate para este método, sin depender de si el filtro OpenEntityManagerInView
+    // ya corrió o no. El filtro JWT (parte de la cadena de Spring Security) se ejecuta ANTES
+    // de que se abra la sesión "de la vista", así que no podíamos confiar en eso.
+    @Override
+    @Transactional(readOnly = true)
+    public UserDetails loadUserByUsername(String correo) throws UsernameNotFoundException {
+        Usuario usuario = usuarioRepository.findByCorreo(correo)
+                .orElseThrow(() -> new UsernameNotFoundException("No existe un usuario registrado con el correo: " + correo));
+
+        // El rol se expone como authority con el prefijo ROLE_ (convencion de Spring Security),
+        // por ejemplo NombreRol.ADMINISTRADOR -> "ROLE_ADMINISTRADOR"
+        String authority = "ROLE_" + usuario.getRol().getNombre().name();
+
+        // RF pendiente: un usuario con estado INACTIVO no puede autenticarse
+        boolean habilitado = usuario.getEstado() == com.aleslul.biblioteca.model.enums.EstadoUsuario.ACTIVO;
+
+        return new User(
+                usuario.getCorreo(),
+                usuario.getContrasena(),
+                habilitado,
+                true,
+                true,
+                true,
+                List.of(new SimpleGrantedAuthority(authority))
+        );
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/impl/PrestamoServiceImpl.java">
+package com.aleslul.biblioteca.service.impl;
+
+import com.aleslul.biblioteca.dto.response.DetallePrestamoResponseDTO;
+import com.aleslul.biblioteca.dto.request.PrestamoRequestDTO;
+import com.aleslul.biblioteca.dto.response.PrestamoResponseDTO;
+import com.aleslul.biblioteca.exception.RecursoNoEncontradoException;
+import com.aleslul.biblioteca.exception.ReglaNegocioException;
+import com.aleslul.biblioteca.model.DetallePrestamo;
+import com.aleslul.biblioteca.model.Libro;
+import com.aleslul.biblioteca.model.Prestamo;
+import com.aleslul.biblioteca.model.Reserva;
+import com.aleslul.biblioteca.model.Usuario;
+import com.aleslul.biblioteca.model.enums.EstadoMulta;
+import com.aleslul.biblioteca.model.enums.EstadoPrestamo;
+import com.aleslul.biblioteca.model.enums.EstadoReserva;
+import com.aleslul.biblioteca.model.enums.TipoAccion;
+import com.aleslul.biblioteca.repository.DetallePrestamoRepository;
+import com.aleslul.biblioteca.repository.LibroRepository;
+import com.aleslul.biblioteca.repository.MultaRepository;
+import com.aleslul.biblioteca.repository.PrestamoRepository;
+import com.aleslul.biblioteca.repository.ReservaRepository;
+import com.aleslul.biblioteca.repository.UsuarioRepository;
+import com.aleslul.biblioteca.service.LogSistemaService;
+import com.aleslul.biblioteca.service.PrestamoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import com.aleslul.biblioteca.exception.AccesoDenegadoException;
+import com.aleslul.biblioteca.model.enums.NombreRol;
+import com.aleslul.biblioteca.security.UsuarioAutenticadoHelper;
+
+@Service
+public class PrestamoServiceImpl implements PrestamoService {
+
+    @Autowired
+    private PrestamoRepository prestamoRepository;
+
+    @Autowired
+    private DetallePrestamoRepository detallePrestamoRepository;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private LibroRepository libroRepository;
+
+    @Autowired
+    private ReservaRepository reservaRepository;
+
+    @Autowired
+    private MultaRepository multaRepository;
+
+    @Autowired
+    private LogSistemaService logSistemaService;
+
+    @Autowired
+    private UsuarioAutenticadoHelper usuarioAutenticadoHelper;
+
+    // DS07 - RF-07: ventana de renovación (horas antes del vencimiento) y días que se extiende
+    @Value("${app.prestamos.horas-ventana-renovacion}")
+    private long horasVentanaRenovacion;
+
+    @Value("${app.prestamos.dias-extension-renovacion}")
+    private long diasExtensionRenovacion;
+
+    @Override
+    @Transactional
+    public PrestamoResponseDTO registrarPrestamo(PrestamoRequestDTO requestDTO) {
+        // 1. Validar existencia del usuario
+        Usuario usuario = usuarioRepository.findById(requestDTO.getIdUsuario())
+                .orElseThrow(() -> new RecursoNoEncontradoException("Usuario no registrado en el sistema con ID: " + requestDTO.getIdUsuario()));
+
+        // 1.0 Un usuario final solo puede solicitar préstamos para sí mismo (autoservicio).
+        // ADMINISTRADOR/BIBLIOTECARIO conservan la posibilidad de registrar a nombre de cualquier usuario (ej. en el mostrador).
+        Usuario usuarioAutenticado = usuarioAutenticadoHelper.obtenerUsuarioActual();
+        boolean esUsuarioFinal = usuarioAutenticado.getRol().getNombre() == NombreRol.USUARIO_FINAL;
+        if (esUsuarioFinal && !usuarioAutenticado.getId().equals(requestDTO.getIdUsuario())) {
+            throw new AccesoDenegadoException("Un usuario no puede solicitar préstamos a nombre de otro usuario");
+        }
+
+        // 1.1. Bloquear si el usuario tiene multas pendientes de pago
+        if (multaRepository.existsByDevolucion_Prestamo_Usuario_IdAndEstado(usuario.getId(), EstadoMulta.PENDIENTE)) {
+            throw new ReglaNegocioException("El usuario tiene multas pendientes de pago; no puede registrar nuevos préstamos/reservas/renovaciones");
+        }
+
+        // 2. Instanciar la cabecera del préstamo
+        Prestamo prestamo = new Prestamo();
+        prestamo.setUsuario(usuario);
+        prestamo.setFechaPrestamo(LocalDateTime.now());
+
+        LocalDateTime fechaVencimiento = requestDTO.getFechaVencimiento() != null
+                ? requestDTO.getFechaVencimiento().atStartOfDay()
+                : LocalDateTime.now().plusDays(7);
+        prestamo.setFechaVencimiento(fechaVencimiento);
+        prestamo.setEstado(EstadoPrestamo.ACTIVO);
+
+        Prestamo prestamoGuardado = prestamoRepository.save(prestamo);
+
+        // 3. Registrar los detalles físicos del libro y cambiar su disponibilidad
+        List<DetallePrestamo> detallesGuardados = new ArrayList<>();
+        for (Integer idLibro : requestDTO.getIdLibros()) {
+            Libro libro = libroRepository.findById(idLibro)
+                    .orElseThrow(() -> new RecursoNoEncontradoException("El libro con ID " + idLibro + " no existe"));
+
+            if (!libro.isDisponible()) {
+                throw new ReglaNegocioException("El libro '" + libro.getTitulo() + "' no tiene copias disponibles");
+            }
+
+            // --- INICIO LÓGICA RF9: Gestión y validación de reservas ---
+            // Buscar si este libro tiene reservas pendientes (por orden de llegada)
+            List<Reserva> reservasActivas = reservaRepository.findByLibroIdAndEstadoOrderByFechaReservaAsc(libro.getId(), EstadoReserva.ACTIVA);
+
+            if (!reservasActivas.isEmpty()) {
+                Reserva primeraReserva = reservasActivas.get(0);
+
+                // Si la primera reserva en fila le pertenece a OTRA persona, bloqueamos el préstamo
+                if (!primeraReserva.getUsuario().getId().equals(usuario.getId())) {
+                    throw new ReglaNegocioException("El libro '" + libro.getTitulo() +
+                            "' está reservado por el usuario: " + primeraReserva.getUsuario().getNombre());
+                } else {
+                    // Si la reserva le pertenece a ESTE mismo usuario, cerramos el ciclo marcándola como ATENDIDA
+                    primeraReserva.setEstado(EstadoReserva.ATENDIDA);
+                    reservaRepository.save(primeraReserva);
+                }
+            }
+            // --- FIN LÓGICA RF9 ---
+
+            // Descontar una copia disponible del stock (ya no se marca el "único" ejemplar como ocupado)
+            libro.setCopiesAvailable(libro.getCopiesAvailable() - 1);
+            libroRepository.save(libro);
+
+            DetallePrestamo detalle = new DetallePrestamo();
+            detalle.setPrestamo(prestamoGuardado);
+            detalle.setLibro(libro);
+            detalle.setDevuelto(false);
+
+            detallesGuardados.add(detallePrestamoRepository.save(detalle));
+        }
+
+        // 4. Escribir huella digital de auditoría en Logs
+        logSistemaService.registrarAccion(
+                usuario.getId(),
+                TipoAccion.REGISTRO_PRESTAMO,
+                "Préstamo ID " + prestamoGuardado.getId() + " registrado. Libros prestados: " + requestDTO.getIdLibros().size()
+        );
+
+        return convertToDTO(prestamoGuardado, detallesGuardados);
+    }
+
+    @Override
+    public PrestamoResponseDTO obtenerPorId(int id) {
+        Prestamo prestamo = prestamoRepository.findById(id)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Préstamo no encontrado con ID: " + id)); // Reemplazado[cite: 2]
+        List<DetallePrestamo> detalles = detallePrestamoRepository.findByPrestamoId(id);
+        return convertToDTO(prestamo, detalles);
+    }
+
+    @Override
+    public List<PrestamoResponseDTO> obtenerTodos() {
+        return prestamoRepository.findAll().stream()
+                .map(prestamo -> {
+                    List<DetallePrestamo> detalles = detallePrestamoRepository.findByPrestamoId(prestamo.getId());
+                    return convertToDTO(prestamo, detalles);
+                })
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<PrestamoResponseDTO> obtenerPorUsuario(int idUsuario) {
+        return prestamoRepository.findByUsuarioId(idUsuario).stream()
+                .map(prestamo -> {
+                    List<DetallePrestamo> detalles = detallePrestamoRepository.findByPrestamoId(prestamo.getId());
+                    return convertToDTO(prestamo, detalles);
+                })
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional
+    public PrestamoResponseDTO renovarPrestamo(int idPrestamo) {
+        // 1. Validar existencia del préstamo
+        Prestamo prestamo = prestamoRepository.findById(idPrestamo)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Préstamo no encontrado con ID: " + idPrestamo));
+
+        // 1.1. Bloquear si el usuario tiene multas pendientes de pago
+        if (multaRepository.existsByDevolucion_Prestamo_Usuario_IdAndEstado(prestamo.getUsuario().getId(), EstadoMulta.PENDIENTE)) {
+            throw new ReglaNegocioException("El usuario tiene multas pendientes de pago; no puede registrar nuevos préstamos/reservas/renovaciones");
+        }
+
+        // 2. Solo se puede renovar un préstamo vigente (ACTIVO o ya RENOVADO antes)
+        if (prestamo.getEstado() == EstadoPrestamo.DEVUELTO) {
+            throw new ReglaNegocioException("No se puede renovar un préstamo que ya fue devuelto");
+        }
+        if (prestamo.getEstado() == EstadoPrestamo.VENCIDO) {
+            throw new ReglaNegocioException("No se puede renovar un préstamo vencido");
+        }
+
+        // 3. Validar la ventana de renovación: solo dentro de las N horas previas al vencimiento
+        LocalDateTime ahora = LocalDateTime.now();
+        LocalDateTime inicioVentana = prestamo.getFechaVencimiento().minusHours(horasVentanaRenovacion);
+        if (ahora.isBefore(inicioVentana)) {
+            throw new ReglaNegocioException(
+                    "La renovación solo está disponible dentro de las " + horasVentanaRenovacion +
+                            " horas previas al vencimiento (" + prestamo.getFechaVencimiento() + ")");
+        }
+        if (ahora.isAfter(prestamo.getFechaVencimiento())) {
+            throw new ReglaNegocioException("El préstamo ya venció, no se puede renovar (debe regularizarse primero)");
+        }
+
+        // 4. Validar que ninguno de los libros del préstamo tenga una reserva activa de otro usuario
+        List<DetallePrestamo> detalles = detallePrestamoRepository.findByPrestamoId(idPrestamo);
+        for (DetallePrestamo detalle : detalles) {
+            Libro libro = detalle.getLibro();
+            List<Reserva> reservasActivas = reservaRepository.findByLibroIdAndEstado(libro.getId(), EstadoReserva.ACTIVA);
+            if (!reservasActivas.isEmpty()) {
+                throw new ReglaNegocioException(
+                        "No se puede renovar: el libro '" + libro.getTitulo() + "' tiene una reserva activa de otro usuario");
+            }
+        }
+
+        // 5. Extender la fecha de vencimiento y marcar como RENOVADO
+        prestamo.setFechaVencimiento(prestamo.getFechaVencimiento().plusDays(diasExtensionRenovacion));
+        prestamo.setEstado(EstadoPrestamo.RENOVADO);
+        Prestamo prestamoRenovado = prestamoRepository.save(prestamo);
+
+        logSistemaService.registrarAccion(
+                prestamo.getUsuario().getId(),
+                TipoAccion.RENOVACION_PRESTAMO,
+                "Préstamo ID " + idPrestamo + " renovado. Nueva fecha de vencimiento: " + prestamoRenovado.getFechaVencimiento()
+        );
+
+        return convertToDTO(prestamoRenovado, detalles);
+    }
+
+    private PrestamoResponseDTO convertToDTO(Prestamo prestamo, List<DetallePrestamo> detalles) {
+        PrestamoResponseDTO dto = new PrestamoResponseDTO();
+        dto.setId(prestamo.getId());
+        dto.setIdUsuario(prestamo.getUsuario().getId());
+        dto.setNombreUsuario(prestamo.getUsuario().getNombre());
+        dto.setFechaPrestamo(prestamo.getFechaPrestamo());
+        dto.setFechaVencimiento(prestamo.getFechaVencimiento());
+        dto.setEstado(prestamo.getEstado().name());
+
+        List<DetallePrestamoResponseDTO> detalleDTOs = detalles.stream().map(d -> {
+            DetallePrestamoResponseDTO detDto = new DetallePrestamoResponseDTO();
+            detDto.setIdDetalle(d.getId());
+            detDto.setIdLibro(d.getLibro().getId());
+            detDto.setTituloLibro(d.getLibro().getTitulo());
+            detDto.setDevuelto(d.getDevuelto());
+            return detDto;
+        }).collect(Collectors.toList());
+
+        dto.setDetalles(detalleDTOs);
+        return dto;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/service/impl/ReservaServiceImpl.java">
+// src/main/java/com/aleslul/biblioteca/service/impl/ReservaServiceImpl.java
+
+package com.aleslul.biblioteca.service.impl;
+
+import com.aleslul.biblioteca.dto.request.ReservaRequestDTO;
+import com.aleslul.biblioteca.dto.response.ReservaResponseDTO;
+import com.aleslul.biblioteca.exception.RecursoDuplicadoException;
+import com.aleslul.biblioteca.exception.RecursoNoEncontradoException;
+import com.aleslul.biblioteca.exception.ReglaNegocioException;
+import com.aleslul.biblioteca.model.Libro;
+import com.aleslul.biblioteca.model.Reserva;
+import com.aleslul.biblioteca.model.Usuario;
+import com.aleslul.biblioteca.model.enums.EstadoMulta;
+import com.aleslul.biblioteca.model.enums.EstadoReserva;
+import com.aleslul.biblioteca.repository.DetallePrestamoRepository; // Asegurar Import
+import com.aleslul.biblioteca.repository.LibroRepository;
+import com.aleslul.biblioteca.repository.MultaRepository;
+import com.aleslul.biblioteca.repository.ReservaRepository;
+import com.aleslul.biblioteca.repository.UsuarioRepository;
+import com.aleslul.biblioteca.service.ReservaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class ReservaServiceImpl implements ReservaService {
+
+    @Autowired
+    private ReservaRepository reservaRepository;
+
+    @Autowired
+    private LibroRepository libroRepository;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private MultaRepository multaRepository;
+
+    @Autowired
+    private DetallePrestamoRepository detallePrestamoRepository; // Nueva Inyección
+
+    @Override
+    public ReservaResponseDTO registrarReserva(ReservaRequestDTO requestDTO) {
+        Libro libro = libroRepository.findById(requestDTO.getIdLibro())
+                .orElseThrow(() -> new RecursoNoEncontradoException("El libro con ID " + requestDTO.getIdLibro() + " no existe"));
+
+        Usuario usuario = usuarioRepository.findById(requestDTO.getIdUsuario())
+                .orElseThrow(() -> new RecursoNoEncontradoException("Usuario no encontrado con ID: " + requestDTO.getIdUsuario()));
+
+        // 1. Bloquear si el usuario tiene multas pendientes de pago
+        if (multaRepository.existsByDevolucion_Prestamo_Usuario_IdAndEstado(usuario.getId(), EstadoMulta.PENDIENTE)) {
+            throw new ReglaNegocioException("El usuario tiene multas pendientes de pago; no puede registrar nuevos préstamos/reservas/renovaciones");
+        }
+
+        // 2. NUEVA REGLA: Validar que no tenga el libro prestado actualmente
+        if (detallePrestamoRepository.existsByLibro_IdAndPrestamo_Usuario_IdAndDevueltoFalse(libro.getId(), usuario.getId())) {
+            throw new ReglaNegocioException("No puedes reservar un libro que actualmente mantienes en préstamo activo");
+        }
+
+        if (libro.isDisponible()) {
+            throw new ReglaNegocioException("El libro '" + libro.getTitulo() + "' está disponible; no es necesario reservarlo");
+        }
+
+        // 3. CORREGIDO: Uso del nuevo método sin ambigüedades de mapeo
+        if (reservaRepository.existsByLibro_IdAndUsuario_IdAndEstado(libro.getId(), usuario.getId(), EstadoReserva.ACTIVA)) {
+            throw new RecursoDuplicadoException("Ya tienes una reserva activa para este libro");
+        }
+
+        Reserva reserva = new Reserva();
+        reserva.setLibro(libro);
+        reserva.setUsuario(usuario);
+        reserva.setFechaReserva(LocalDateTime.now());
+        reserva.setEstado(EstadoReserva.ACTIVA);
+
+        return convertToDTO(reservaRepository.save(reserva));
+    }
+
+    @Override
+    public void cancelarReserva(int id) {
+        Reserva reserva = reservaRepository.findById(id)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Reserva no encontrada con ID: " + id));
+        reserva.setEstado(EstadoReserva.CANCELADA);
+        reservaRepository.save(reserva);
+    }
+
+    @Override
+    public List<ReservaResponseDTO> obtenerPorUsuario(int idUsuario) {
+        return reservaRepository.findByUsuarioId(idUsuario).stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ReservaResponseDTO> obtenerTodas() {
+        return reservaRepository.findAll().stream()
+                .map(this::convertToDTO)
+                .collect(Collectors.toList());
+    }
+
+    private ReservaResponseDTO convertToDTO(Reserva reserva) {
+        ReservaResponseDTO dto = new ReservaResponseDTO();
+        dto.setId(reserva.getId());
+        dto.setIdLibro(reserva.getLibro().getId());
+        dto.setTituloLibro(reserva.getLibro().getTitulo());
+        dto.setIdUsuario(reserva.getUsuario().getId());
+        dto.setNombreUsuario(reserva.getUsuario().getNombre());
+        dto.setFechaReserva(reserva.getFechaReserva());
+        dto.setEstado(reserva.getEstado().name());
+        return dto;
+    }
+}
+</file>
+
+<file path="src/main/java/com/aleslul/biblioteca/security/SecurityConfig.java">
+package com.aleslul.biblioteca.security;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Configuration
+public class SecurityConfig {
+
+    @Autowired
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
+
+    @Autowired
+    private CustomUserDetailsService userDetailsService;
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider(userDetailsService);
+        provider.setPasswordEncoder(passwordEncoder());
+        return provider;
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowedOriginPatterns(List.of("*"));
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedHeaders(List.of("*"));
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/api/**", config);
+        return source;
+    }
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(AbstractHttpConfigurer::disable)
+                .cors(Customizer.withDefaults())
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(authorize -> authorize
+                        // Preflight de CORS siempre debe pasar
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+
+                        // Login y registro de usuarios son publicos
+                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/usuarios").permitAll()
+
+                        // Operaciones administrativas sensibles: solo ADMINISTRADOR
+                        .requestMatchers(HttpMethod.DELETE, "/api/usuarios/**").hasRole("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.PUT, "/api/usuarios/*/rol").hasRole("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.PUT, "/api/usuarios/*").hasRole("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.GET, "/api/logs/**").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
+
+                        // Multas: pagar/condonar es sensible (solo ADMINISTRADOR); listar es de consulta
+                        .requestMatchers(HttpMethod.PUT, "/api/multas/**").hasRole("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.GET, "/api/multas/usuario/**").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/api/multas").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
+
+                        // Circulacion de materiales: BIBLIOTECARIO o ADMINISTRADOR
+                        .requestMatchers(HttpMethod.POST, "/api/libros").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
+                        .requestMatchers(HttpMethod.PUT, "/api/libros/*").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
+                        .requestMatchers(HttpMethod.DELETE, "/api/libros/*").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
+                        .requestMatchers(HttpMethod.POST, "/api/prestamos").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO", "USUARIO_FINAL")
+                        .requestMatchers(HttpMethod.POST, "/api/devoluciones").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
+
+                        .requestMatchers(HttpMethod.POST, "/api/reservas").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO", "USUARIO_FINAL")
+                        // MODIFICADO: Permitir al estudiante enviar la petición de cancelación
+                        .requestMatchers(HttpMethod.DELETE, "/api/reservas/**").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO", "USUARIO_FINAL")
+
+                        // RF9: reportes de circulación, solo personal de biblioteca
+                        .requestMatchers("/api/reportes/**").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
+
+                        // El resto de endpoints solo requiere estar autenticado (cualquier rol)
+                        .anyRequest().authenticated()
+                )
+                .exceptionHandling(exceptions -> exceptions
+                        .authenticationEntryPoint(this::manejarNoAutenticado)
+                        .accessDeniedHandler(this::manejarAccesoDenegado)
+                )
+                .authenticationProvider(authenticationProvider())
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return http.build();
+    }
+
+    // 401: no se envio token o el token es invalido/expirado
+    private void manejarNoAutenticado(jakarta.servlet.http.HttpServletRequest request,
+                                      jakarta.servlet.http.HttpServletResponse response,
+                                      org.springframework.security.core.AuthenticationException ex) throws java.io.IOException {
+        escribirError(response, request.getRequestURI(), HttpStatus.UNAUTHORIZED, "No autorizado",
+                "Debes iniciar sesion para acceder a este recurso");
+    }
+
+    // 403: el usuario esta autenticado pero su rol no tiene permiso
+    private void manejarAccesoDenegado(jakarta.servlet.http.HttpServletRequest request,
+                                       jakarta.servlet.http.HttpServletResponse response,
+                                       org.springframework.security.access.AccessDeniedException ex) throws java.io.IOException {
+        escribirError(response, request.getRequestURI(), HttpStatus.FORBIDDEN, "Acceso denegado",
+                "Tu rol no tiene permisos para realizar esta accion");
+    }
+
+    private void escribirError(jakarta.servlet.http.HttpServletResponse response, String path,
+                               HttpStatus status, String error, String mensaje) throws java.io.IOException {
+        response.setStatus(status.value());
+        response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+        response.setCharacterEncoding("UTF-8");
+
+        String json = String.format(
+                "{\"timestamp\":\"%s\",\"status\":%d,\"error\":\"%s\",\"message\":\"%s\",\"path\":\"%s\"}",
+                LocalDateTime.now(),
+                status.value(),
+                escaparJson(error),
+                escaparJson(mensaje),
+                escaparJson(path)
+        );
+        response.getWriter().write(json);
+    }
+
+    private String escaparJson(String texto) {
+        if (texto == null) return "";
+        return texto.replace("\\", "\\\\").replace("\"", "\\\"");
+    }
+}
+</file>
+
+</files>

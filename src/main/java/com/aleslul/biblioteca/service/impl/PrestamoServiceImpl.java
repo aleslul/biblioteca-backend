@@ -103,12 +103,26 @@ public class PrestamoServiceImpl implements PrestamoService {
 
         // 3. Registrar los detalles físicos del libro y cambiar su disponibilidad
         List<DetallePrestamo> detallesGuardados = new ArrayList<>();
+
+        // 2.1. REGLA: no se puede pedir el mismo título más de una vez en la misma solicitud
+        //      (ej. idLibros: [5, 5]) — en una biblioteca solo llevas un ejemplar por título.
+        long titulosUnicos = requestDTO.getIdLibros().stream().distinct().count();
+        if (titulosUnicos < requestDTO.getIdLibros().size()) {
+            throw new ReglaNegocioException("No puedes solicitar el mismo libro más de una vez en el mismo préstamo");
+        }
+
         for (Integer idLibro : requestDTO.getIdLibros()) {
             Libro libro = libroRepository.findById(idLibro)
                     .orElseThrow(() -> new RecursoNoEncontradoException("El libro con ID " + idLibro + " no existe"));
 
             if (!libro.isDisponible()) {
                 throw new ReglaNegocioException("El libro '" + libro.getTitulo() + "' no tiene copias disponibles");
+            }
+
+            // 2.2. REGLA: no se puede pedir prestado un título que el usuario ya tiene
+            //      activo (sin devolver) de un préstamo anterior — solo un ejemplar por título a la vez.
+            if (detallePrestamoRepository.existsByLibro_IdAndPrestamo_Usuario_IdAndDevueltoFalse(libro.getId(), usuario.getId())) {
+                throw new ReglaNegocioException("Ya tienes un ejemplar de '" + libro.getTitulo() + "' en préstamo activo");
             }
 
             // --- INICIO LÓGICA RF9: Gestión y validación de reservas ---
