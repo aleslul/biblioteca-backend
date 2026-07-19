@@ -7,6 +7,7 @@ import java.util.List;
 @Data
 public class PrestamoResponseDTO {
     private int id;
+    private int idUsuario;
     private String nombreUsuario;
     private LocalDateTime fechaPrestamo;
     private LocalDateTime fechaVencimiento;

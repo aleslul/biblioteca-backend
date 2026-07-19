@@ -52,8 +52,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 }
             }
         } catch (Exception ex) {
-            // Token invalido, mal formado o expirado: se deja la request sin autenticar
-            // y Spring Security respondera 401/403 mas adelante en la cadena de filtros.
+            // TEMPORAL: para diagnosticar el 401 — quitar después de resolver el problema.
+            System.out.println("### JWT FILTER ERROR: " + ex.getClass().getName() + " -> " + ex.getMessage());
+            ex.printStackTrace();
             SecurityContextHolder.clearContext();
         }
 

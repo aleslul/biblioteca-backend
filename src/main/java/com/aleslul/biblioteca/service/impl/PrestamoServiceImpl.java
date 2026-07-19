@@ -226,6 +226,7 @@ public class PrestamoServiceImpl implements PrestamoService {
     private PrestamoResponseDTO convertToDTO(Prestamo prestamo, List<DetallePrestamo> detalles) {
         PrestamoResponseDTO dto = new PrestamoResponseDTO();
         dto.setId(prestamo.getId());
+        dto.setIdUsuario(prestamo.getUsuario().getId());
         dto.setNombreUsuario(prestamo.getUsuario().getNombre());
         dto.setFechaPrestamo(prestamo.getFechaPrestamo());
         dto.setFechaVencimiento(prestamo.getFechaVencimiento());

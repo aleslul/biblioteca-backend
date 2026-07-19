@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.List;
 
 @Service
 public class MultaServiceImpl implements MultaService {
@@ -30,6 +31,17 @@ public class MultaServiceImpl implements MultaService {
                 .orElseThrow(() -> new RecursoNoEncontradoException("Multa no encontrada con ID: " + idMulta)); // Reemplazado[cite: 2]
         multa.setEstado(EstadoMulta.CONDONADA);
         return multaRepository.save(multa);
+    }
+
+    // RF pendiente: el frontend necesita listar multas (GET /api/multas no existía)
+    @Override
+    public List<Multa> obtenerTodas() {
+        return multaRepository.findAll();
+    }
+
+    @Override
+    public List<Multa> obtenerPorUsuario(int idUsuario) {
+        return multaRepository.findByDevolucion_Prestamo_Usuario_Id(idUsuario);
     }
 
     @Override

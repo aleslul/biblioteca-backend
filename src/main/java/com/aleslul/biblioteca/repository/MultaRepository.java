@@ -5,10 +5,15 @@ import com.aleslul.biblioteca.model.enums.EstadoMulta;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface MultaRepository extends JpaRepository<Multa, Integer> {
 
     // RF pendiente: verifica si un usuario tiene multas en un estado dado,
     // navegando Multa -> Devolucion -> Prestamo -> Usuario
     boolean existsByDevolucion_Prestamo_Usuario_IdAndEstado(int idUsuario, EstadoMulta estado);
+
+    // RF pendiente: multas de un usuario específico (para la vista de estudiante)
+    List<Multa> findByDevolucion_Prestamo_Usuario_Id(int idUsuario);
 }
