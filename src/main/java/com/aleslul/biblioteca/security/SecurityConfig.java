@@ -80,7 +80,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.DELETE, "/api/usuarios/**").hasRole("ADMINISTRADOR")
                         .requestMatchers(HttpMethod.PUT, "/api/usuarios/*/rol").hasRole("ADMINISTRADOR")
                         .requestMatchers(HttpMethod.PUT, "/api/usuarios/*").hasRole("ADMINISTRADOR")
-                        .requestMatchers(HttpMethod.GET, "/api/logs/**").hasRole("ADMINISTRADOR")
+                        .requestMatchers(HttpMethod.GET, "/api/logs/**").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
 
                         // Multas: pagar/condonar es sensible (solo ADMINISTRADOR); listar es de consulta
                         .requestMatchers(HttpMethod.PUT, "/api/multas/**").hasRole("ADMINISTRADOR")
