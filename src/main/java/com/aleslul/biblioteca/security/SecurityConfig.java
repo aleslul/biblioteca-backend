@@ -94,6 +94,10 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/prestamos").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO", "USUARIO_FINAL")
                         .requestMatchers(HttpMethod.POST, "/api/devoluciones").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
 
+                        .requestMatchers(HttpMethod.POST, "/api/reservas").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO", "USUARIO_FINAL")
+                        // MODIFICADO: Permitir al estudiante enviar la petición de cancelación
+                        .requestMatchers(HttpMethod.DELETE, "/api/reservas/**").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO", "USUARIO_FINAL")
+
                         // RF9: reportes de circulación, solo personal de biblioteca
                         .requestMatchers("/api/reportes/**").hasAnyRole("ADMINISTRADOR", "BIBLIOTECARIO")
 
